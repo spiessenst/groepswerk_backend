@@ -1,9 +1,11 @@
 @use "./base/reset";
-@use "./base/variables" as *;
 @use "./base/fonts" as *;
+@use "./base/variables" as *;
+
 
 body {
   background-color: $dark-green;
+  font-family: "Berlin Sans FB";
 }
 
 main {
@@ -68,7 +70,13 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    li {
+    a{
+      text-decoration: none;
+
+    }
+    li  {
+
+      color: $light-gray;
       padding: 10px 20px 10px 20px;
       border: 1px solid $light-gray;
       border-radius: 10px;

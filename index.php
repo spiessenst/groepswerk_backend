@@ -13,6 +13,12 @@ PrintHead();
     </section>
 
     </main>
+
+    <?php
+
+
+print GenreList("select * from genre") ?>
+
     <?php  PrintFooter() ;
 
 

@@ -21,7 +21,25 @@ function MakeSelect( $fkey, $value, $sql )
     return $select;
 }
 
+function GenreList($sql){
 
+    $data = GetData($sql);
+
+
+    $list  = '<section class="genre_links"> <ul>';
+
+    foreach ( $data as $row )
+    {
+      // $list  .= '<li><a href=index.php?gr_id='.$row["gr_id"].'>'.$row["gr_name"].'</a></li>';
+
+        $list  .= '<a href=index.php?gr_id='.$row["gr_id"].'><li>'.$row["gr_name"].'</li></a>';
+    }
+    $list  .= '</ul> </section>';
+
+    return $list;
+
+
+}
 
 function MakeCheckbox( )
 {
