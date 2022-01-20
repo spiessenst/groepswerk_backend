@@ -4,7 +4,7 @@ require_once "lib/autoload.php";
 PrintHead();
 ?>
 
-      <main>
+    <main>
 
    <?php  PrintTop() ; ?>
 
@@ -14,3 +14,5 @@ PrintHead();
 
     </main>
     <?php  PrintFooter() ;
+
+
