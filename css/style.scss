@@ -1,0 +1,147 @@
+@use "./base/reset";
+@use "./base/variables" as *;
+@use "./base/fonts" as *;
+
+body {
+  background-color: $dark-green;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 188px);
+  width: 70%;
+}
+
+.top {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  .logo {
+    a {
+      text-decoration: none;
+      color: $light-gray;
+    }
+    font-family: "Berlin Sans FB";
+    font-size: 60px;
+
+    span:nth-child(1) {
+      color: $pink;
+    }
+    span:nth-child(2) {
+      color: $light-green;
+    }
+
+    &:before {
+      position: relative;
+      top: 15px;
+      background-image: url(./images/logo.png);
+      background-size: 70px 70px;
+      background-repeat: no-repeat;
+      display: inline-block;
+      width: 75px;
+      height: 70px;
+      content: "";
+    }
+  }
+}
+
+.middle {
+
+
+}
+
+.genre_links {
+  font-family: "Berlin Sans FB";
+  font-size: 14px;
+  color: $light-gray;
+  width: 70%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-right: 50px;
+  margin-bottom: 50px;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    li {
+      padding: 10px 20px 10px 20px;
+      border: 1px solid $light-gray;
+      border-radius: 10px;
+      cursor: pointer;
+      &:hover {
+        color: $light-green;
+        border-color: $light-green;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $pink;
+  height: 50px;
+  width: 100%;
+  position: relative;
+
+  .container {
+    font-family: "Berlin Sans FB";
+    font-size: 11px;
+    color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 70%;
+    padding-top: 20px;
+  }
+
+  .elements {
+    position: absolute;
+    bottom: 20px;
+    right: 0px;
+
+    .circle {
+      width: 170px;
+      height: 170px;
+      background-image: url(./images/lp_element.png);
+      background-size: 170px 170px;
+      background-repeat: no-repeat;
+    }
+    .circle2 {
+      position: absolute;
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      background-color: $darker-green;
+      bottom: -20px;
+      left: -100px;
+      z-index: -2;
+    }
+    .block {
+      position: absolute;
+      width: 90px;
+      height: 10px;
+      background-color: $light-blue;
+      bottom: 40px;
+      left: -130px;
+    }
+    .block1 {
+      position: absolute;
+      width: 90px;
+      height: 10px;
+      background-color: $light-blue;
+      bottom: 60px;
+      left: -150px;
+    }
+    .block2 {
+      position: absolute;
+      width: 90px;
+      height: 10px;
+      background-color: $light-blue;
+      bottom: 80px;
+      left: -130px;
+    }
+  }
+}
