@@ -151,7 +151,7 @@ body {
 main {
   max-width: 1200px;
   margin: 0 auto;
-  min-height: calc(100vh - 50px);
+  min-height: calc(100vh - 188px);
   width: 70%;
 }
 
@@ -188,10 +188,6 @@ main {
   content: "";
 }
 
-.middle {
-  min-height: 250px;
-}
-
 .genre_links {
   font-family: "Berlin Sans FB";
   font-size: 14px;
@@ -199,7 +195,7 @@ main {
   width: 70%;
   max-width: 1200px;
   margin: 0 auto;
-  padding-right: 100px;
+  padding-right: 50px;
   margin-bottom: 50px;
 }
 .genre_links ul {
