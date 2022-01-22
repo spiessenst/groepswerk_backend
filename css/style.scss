@@ -2,7 +2,6 @@
 @use "./base/fonts" as *;
 @use "./base/variables" as *;
 
-
 body {
   background-color: $dark-green;
   font-family: "Berlin Sans FB";
@@ -52,8 +51,6 @@ main {
 }
 
 .middle {
-
-
 }
 
 .genre_links {
@@ -70,12 +67,10 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    a{
+    a {
       text-decoration: none;
-
     }
-    li  {
-
+    li {
       color: $light-gray;
       padding: 10px 20px 10px 20px;
       border: 1px solid $light-gray;
@@ -151,5 +146,21 @@ footer {
       bottom: 80px;
       left: -130px;
     }
+  }
+}
+
+.albumgrid {
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 35px;
+  .item {
+    flex: 1 1 450px;
+    height: 470px;
+    background-color: $darker-green;
+    border-radius: 9px;
   }
 }
