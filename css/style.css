@@ -284,12 +284,14 @@ footer .elements .block2 {
 .albumgrid {
   margin: 0 auto;
   margin-top: 100px;
+  margin-bottom: 18px;
   max-width: 1940px;
   width: 75%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 25px;
+  column-gap: 25px;
+  row-gap: 40px;
 }
 .albumgrid .item {
   flex: 1 1 350px;
@@ -305,7 +307,18 @@ footer .elements .block2 {
   height: 50%;
   margin: 0 auto;
   position: relative;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
+  z-index: 1;
+}
+.albumgrid .item .imageholder .circle {
+  top: 0px;
+  right: 73px;
+  height: 135px;
+  width: 135px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
 }
 .albumgrid .item .imageholder img {
   display: block;
@@ -315,10 +328,47 @@ footer .elements .block2 {
   max-height: 200px;
   max-width: 200px;
 }
+.albumgrid .item .imageholder .mirrored {
+  transform: scaleY(-1);
+  height: 30%;
+  opacity: 10%;
+  border-radius: 5px;
+}
 .albumgrid .item .info {
   color: #eee3e3;
   font-size: 20px;
   padding-left: 60px;
+  line-height: 30px;
+}
+.albumgrid .pagenumbers p {
+  color: rgba(245, 241, 241, 0.849);
+  text-align: right;
+}
+
+.item:hover {
+  background-color: #4cbfcf;
+  transform: scale(1.05);
+  transition: 1s;
+}
+
+.circle:after {
+  content: "";
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  background-color: #eee3e3;
+  border-radius: 50%;
+  top: 36px;
+  right: 34px;
+}
+
+.pagenumbers p {
+  color: rgba(245, 241, 241, 0.849);
+  text-align: right;
+  width: 100%;
+  max-width: 1940px;
+  width: 85%;
+  margin-bottom: 100px;
 }
 
 /*# sourceMappingURL=style.css.map */
