@@ -9,7 +9,7 @@ PrintHead();
    <?php  PrintTop() ; ?>
 
     <section class="middle">
-
+    <?php PrintMiddle() ; ?>
     </section>
 
     </main>

@@ -17,6 +17,11 @@ function PrintTop()
     print $top;
 }
 
+function PrintMiddle(){
+    $middle = file_get_contents("templates/albumgrid.html");
+    print $middle;
+}
+
 
 
 
