@@ -2,6 +2,21 @@
 @use "./base/fonts" as *;
 @use "./base/variables" as *;
 
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
 
 body {
   background-color: $dark-green;
@@ -49,6 +64,95 @@ main {
       content: "";
     }
   }
+
+  .logo {
+    a {
+      text-decoration: none;
+      color: $light-gray;
+    }
+    font-family: "Berlin Sans FB";
+    font-size: 60px;
+
+    span:nth-child(1) {
+      color: $pink;
+    }
+    span:nth-child(2) {
+      color: $light-green;
+    }
+
+    &:before {
+      position: relative;
+      top: 15px;
+      background-image: url(./images/logo.png);
+      background-size: 70px 70px;
+      background-repeat: no-repeat;
+      display: inline-block;
+      width: 75px;
+      height: 70px;
+      content: "";
+    }
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    font-family: "Berlin Sans FB";
+    font-size: 18px;
+
+    a {
+      color: $light-gray;
+      text-decoration: none;
+      padding-bottom: 20px;
+      &:hover {
+        color: $light-green;
+      }
+    }
+    ul {
+      display: flex;
+      li {
+        padding-left: 30px;
+        padding-right: 25px;
+      }
+    }
+
+    .form {
+      position: relative;
+      &__search {
+        border: none;
+        background-color: $darker-green;
+        border-radius: 7px 0px 0px 7px;
+        height: 35px;
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 60px;
+        font-family: "Berlin Sans FB";
+        font-size: 18px;
+        outline: none;
+        color: white;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+      }
+      &__spin {
+        position: absolute;
+        right: -20px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        height: 37px;
+        width: 37px;
+        border: none;
+        font-family: "Berlin Sans FB";
+        color: white;
+        background-color: $pink;
+        cursor: pointer;
+        transform: rotate(-20deg);
+        transition: transform 0.3s ease-in-out;
+        &:hover {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+
 }
 
 .middle {
@@ -72,7 +176,6 @@ main {
     gap: 15px;
     a{
       text-decoration: none;
-
     }
     li  {
 
