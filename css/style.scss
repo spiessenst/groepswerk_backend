@@ -64,34 +64,6 @@ main {
     }
   }
 
-  .logo {
-    a {
-      text-decoration: none;
-      color: $light-gray;
-    }
-    font-family: "Berlin Sans FB";
-    font-size: 60px;
-
-    span:nth-child(1) {
-      color: $pink;
-    }
-    span:nth-child(2) {
-      color: $light-green;
-    }
-
-    &:before {
-      position: relative;
-      top: 15px;
-      background-image: url(./images/logo.png);
-      background-size: 70px 70px;
-      background-repeat: no-repeat;
-      display: inline-block;
-      width: 75px;
-      height: 70px;
-      content: "";
-    }
-  }
-
   nav {
     display: flex;
     flex-direction: column;
@@ -154,8 +126,6 @@ main {
 
 }
 
-.middle {
-}
 
 .genre_links {
   font-family: "Berlin Sans FB";
@@ -209,7 +179,7 @@ footer {
     bottom: 20px;
     right: 0px;
 
-    .circle {
+    .circle1 {
       width: 170px;
       height: 170px;
       background-image: url(./images/lp_element.png);
