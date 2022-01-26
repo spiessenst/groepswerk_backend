@@ -154,7 +154,7 @@ footer {
   margin-top: 100px;
   margin-bottom: 18px;
   max-width: 1940px;
-  width: 75%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -201,6 +201,7 @@ footer {
       }
     }
     .info {
+      padding-top: 50px;
       color: $light-gray;
       font-size: 20px;
       padding-left: 60px;
