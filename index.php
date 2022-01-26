@@ -16,8 +16,8 @@ PrintHead();
 
     <?php
 
-
-print GenreList("select * from genre") ?>
+    $data = getData("select * from genre" );
+    print GenreList($data) ?>
 
     <?php  PrintFooter() ;
 
