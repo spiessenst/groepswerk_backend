@@ -17,7 +17,6 @@
   /* Microsoft Edge */
   color: white;
 }
-
 body {
   background-color: $dark-green;
   font-family: "Berlin Sans FB";
@@ -156,8 +155,6 @@ main {
 }
 
 .middle {
-
-
 }
 
 .genre_links {
@@ -174,11 +171,10 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    a{
+    a {
       text-decoration: none;
     }
-    li  {
-
+    li {
       color: $light-gray;
       padding: 10px 20px 10px 20px;
       border: 1px solid $light-gray;
@@ -255,4 +251,95 @@ footer {
       left: -130px;
     }
   }
+}
+
+.albumgrid {
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 18px;
+  max-width: 1940px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 25px;
+  row-gap: 40px;
+  .item {
+    flex: 1 1 350px;
+    height: 350px;
+    background-color: $darker-green;
+    border-radius: 9px;
+    padding-top: 47px;
+    cursor: pointer;
+    .imageholder {
+      aspect-ratio: 1/1;
+      width: 75%;
+      height: 50%;
+      margin: 0 auto;
+      position: relative;
+      margin-bottom: 50px;
+      z-index: 1;
+      .circle {
+        top: 0px;
+        right: 73px;
+        height: 135px;
+        width: 135px;
+        background-color: black;
+        border-radius: 50%;
+        position: absolute;
+        z-index: -1;
+      }
+      img {
+        display: block;
+        object-fit: cover;
+        width: 50%;
+        height: auto;
+        max-height: 200px;
+        max-width: 200px;
+      }
+      .mirrored {
+        transform: scaleY(-1);
+        height: 30%;
+        opacity: 10%;
+        border-radius: 5px;
+      }
+    }
+    .info {
+      padding-top: 50px;
+      color: $light-gray;
+      font-size: 20px;
+      padding-left: 60px;
+      line-height: 30px;
+    }
+  }
+  .pagenumbers p {
+    color: rgba(245, 241, 241, 0.849);
+    text-align: right;
+  }
+}
+
+.item:hover {
+  background-color: $light-blue;
+  transform: scale(1.05);
+  transition: 1s;
+}
+
+.circle:after {
+  content: "";
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  background-color: $light-gray;
+  border-radius: 50%;
+  top: 36px;
+  right: 34px;
+}
+
+.pagenumbers p {
+  color: rgba(245, 241, 241, 0.849);
+  text-align: right;
+  width: 100%;
+  max-width: 1940px;
+  width: 85%;
+  margin-bottom: 100px;
 }
