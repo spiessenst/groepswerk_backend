@@ -526,7 +526,7 @@ footer .elements .block2 {
   margin-bottom: 20px;
 }
 .detail .right .release:before {
-  content: "Releaseyear: ";
+  content: "Releasedate: ";
 }
 .detail .right .genre {
   font-size: 20px;

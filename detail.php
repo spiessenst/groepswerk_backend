@@ -27,15 +27,10 @@ where alb_id =" . $_GET['alb_id']);
 
             $output = MergeViewWithExtraElementsGenre ( $output  , $genre);
 
-
             $songlist = getData("select * from track
 where tr_alb_id=". $_GET['alb_id']. " order by tr_id");
 
-
-
            $output =  MergeSongList($output , $songlist);
-
-
 
             print $output;
 

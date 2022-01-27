@@ -31,7 +31,9 @@ function MergeViewWithData( $template, $data )
         $output = $template;
 
         foreach( array_keys($row) as $field )  //eerst "img_id", dan "img_title", ...
+
         {
+
             $output = str_replace( "@$field@", $row["$field"], $output );
         }
 
@@ -46,6 +48,7 @@ function MergeViewWithExtraElements( $template, $elements )
 
     foreach ( $elements as $key => $element )
     {
+
         $template = str_replace( "@$key@", $element, $template );
     }
     return $template;
