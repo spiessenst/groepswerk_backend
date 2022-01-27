@@ -22,9 +22,6 @@ function PrintMiddle(){
     print $middle;
 }
 
-
-
-
 function MergeViewWithData( $template, $data )
 {
     $returnvalue = "";
