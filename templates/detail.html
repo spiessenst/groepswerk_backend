@@ -1,53 +1,33 @@
 <section class="detail">
     <section class="left">
         <div class="imgholder">
-            <img src="./images/MilesDavisKindofBlue.jpg" alt="" />
+            <img src="./images/@alb_img@" alt="albumimage" />
             <img
                     class="mirrored"
-                    src="images/MilesDavisKindofBlue.jpg"
+                    src="images/@alb_img@"
                     alt=""
             />
             <div class="recordshadow"></div>
         </div>
     </section>
     <section class="right">
-        <div class="artist">Miles Davis</div>
-        <div class="album">Kind of Blue</div>
-        <div class="release">1959</div>
-        <div class="genre">Jazz</div>
+        <div class="artist">@art_name@</div>
+        <div class="album">@alb_name@</div>
+        <div class="release">@alb_releasedate@</div>
+        <div class="genre">@gr_name@</div>
 
         <div class="songlist">
             <h2>Tracks</h2>
-            <table>
-                <tr>
-                    <td>1.</td>
-                    <td>Titekdjgmldksg dskgjdslmgjsd sdgjsdlmgsl</td>
-                    <td>15:00</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Titel</td>
-                    <td>16:00</td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>Titel</td>
-                    <td>10:00</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Titel</td>
-                    <td>09:00</td>
-                </tr>
-            </table>
+            @songlisttable@
         </div>
         <iframe
-                src="https://open.spotify.com/embed/album/1weenld61qoidwYuZ1GESA?utm_source=generator"
+                src="https://open.spotify.com/embed/album/@alb_url@?utm_source=generator"
                 width="100%"
                 height="80"
                 frameborder="0"
                 allowfullscreen=""
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         ></iframe>
+        <div class="spotifyCode"><img src="https://scannables.scdn.co/uri/plain/png/014048/white/360/spotify:album:@alb_url@"></div>
     </section>
 </section>

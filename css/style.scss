@@ -320,6 +320,9 @@ footer {
   gap: 150px;
   flex-wrap: wrap;
   color: $light-gray;
+  margin: 0 auto;
+  width: 90%;
+
 
   .left {
     flex: 1 1 430px;
@@ -394,7 +397,7 @@ footer {
       font-size: 20px;
       margin-bottom: 20px;
       &:before {
-        content: "Releaseyear: ";
+        content: "Releasedate: ";
       }
     }
     .genre {
