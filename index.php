@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+ini_set( 'display_errors', 1 );
 require_once "lib/autoload.php";
 
 PrintHead();
@@ -12,7 +14,11 @@ PrintHead();
             <div class="albumgrid">
                 <?php
                 //get data
-                $sql = "select * from album inner join artist a on album.alb_art_id = a.art_id where alb_name like '%" . $_GET["search"] . "%'";
+                if ($_GET) {
+                    $sql = "select * from album inner join artist a on album.alb_art_id = a.art_id where alb_name like '%" . $_GET["search"] . "%'";
+                } else {
+                    $sql = "select * from album inner join artist a on album.alb_art_id = a.art_id";
+                }
                 //print $sql;
                 $data = getData($sql);
                 //get template
