@@ -446,4 +446,105 @@ footer .elements .block2 {
   margin-bottom: 100px;
 }
 
+.detail {
+  display: flex;
+  justify-content: space-between;
+  gap: 150px;
+  flex-wrap: wrap;
+  color: #eee3e3;
+}
+.detail .left {
+  flex: 1 1 430px;
+}
+.detail .left .imgholder {
+  position: relative;
+  width: 316px;
+  height: 316px;
+  z-index: 1;
+}
+.detail .left .imgholder:after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 150px;
+  z-index: -2;
+}
+.detail .left .imgholder:before {
+  content: "";
+  position: absolute;
+  background-color: #f67d7e;
+  border-radius: 50%;
+  width: 30%;
+  height: 30%;
+  top: 110px;
+  left: 270px;
+  z-index: -1;
+}
+.detail .left img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+.detail .left .mirrored {
+  transform: scaleY(-1);
+  height: 30%;
+  opacity: 10%;
+  border-radius: 5px;
+}
+.detail .left .recordshadow {
+  position: absolute;
+  clip-path: inset(0 0 70% 52%);
+  background-color: black;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  top: 316px;
+  left: 150px;
+  opacity: 10%;
+}
+.detail .right {
+  flex: 1 1 300px;
+  padding-bottom: 50px;
+}
+.detail .right .artist {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+.detail .right .album {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.detail .right .release {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.detail .right .release:before {
+  content: "Releaseyear: ";
+}
+.detail .right .genre {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.detail .right .genre:before {
+  content: "Genre: ";
+}
+.detail .songlist h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.detail .songlist table {
+  width: 100%;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.detail .songlist table td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 /*# sourceMappingURL=style.css.map */
