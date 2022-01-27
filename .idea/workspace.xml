@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="47d342e5-94b8-417d-878c-f2c56688e9c0" name="Changes" comment="" />
+    <list default="true" id="9e402133-d002-4455-95bb-4743965ed31e" name="Changes" comment="css fix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,14 +24,16 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="spiessenst" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/index.html" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3" />
-  <component name="ProjectId" id="23ma1nhVIXrmWLYs1oNWNSDD7r5" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4" />
+  <component name="ProjectId" id="23mat9KGdoy2qaTt2rI7QUp5yg4" />
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -33,31 +41,129 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../functioneelprogrammeren" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/css/style.scss" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\groepswerk_backend" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="47d342e5-94b8-417d-878c-f2c56688e9c0" name="Changes" comment="" />
-      <created>1642341504356</created>
+      <changelist id="9e402133-d002-4455-95bb-4743965ed31e" name="Changes" comment="" />
+      <created>1642341927416</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1642341504356</updated>
-      <workItem from="1642341505583" duration="2329000" />
-      <workItem from="1642437440610" duration="606000" />
-      <workItem from="1642511249665" duration="14000" />
-      <workItem from="1642669721830" duration="421000" />
+      <updated>1642341927416</updated>
+      <workItem from="1642341928902" duration="2594000" />
+      <workItem from="1642407338145" duration="538000" />
+      <workItem from="1642674394351" duration="1785000" />
+      <workItem from="1642676203193" duration="16399000" />
+      <workItem from="1642782169944" duration="1385000" />
+      <workItem from="1643122781811" duration="5771000" />
+      <workItem from="1643189195263" duration="1228000" />
+      <workItem from="1643192774634" duration="281000" />
+      <workItem from="1643193094145" duration="3193000" />
     </task>
+    <task id="LOCAL-00001" summary="title">
+      <created>1642342456705</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1642342456705</updated>
+    </task>
+    <task id="LOCAL-00002" summary="footer">
+      <created>1642679363335</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1642679363335</updated>
+    </task>
+    <task id="LOCAL-00003" summary="index.php">
+      <created>1642682838814</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1642682838814</updated>
+    </task>
+    <task id="LOCAL-00004" summary="index.php">
+      <created>1642683104872</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1642683104872</updated>
+    </task>
+    <task id="LOCAL-00005" summary="index.php 2">
+      <created>1642683323495</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1642683323495</updated>
+    </task>
+    <task id="LOCAL-00006" summary="index.php 2">
+      <created>1642683452890</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1642683452890</updated>
+    </task>
+    <task id="LOCAL-00007" summary="latest version">
+      <created>1642693896697</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1642693896697</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add top">
+      <created>1643138103222</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1643138103222</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="title" />
+    <MESSAGE value="footer" />
+    <MESSAGE value="index.php" />
+    <MESSAGE value="index.php 2" />
+    <MESSAGE value="latest version" />
+    <MESSAGE value="font fix" />
+    <MESSAGE value="add top" />
+    <MESSAGE value="before pull" />
+    <MESSAGE value="css fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="css fix" />
   </component>
 </project>
