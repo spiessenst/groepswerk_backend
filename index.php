@@ -12,7 +12,9 @@ PrintHead();
             <div class="albumgrid">
                 <?php
                 //get data
-                $data = getData("select * from album inner join artist a on album.alb_art_id = a.art_id");
+                $sql = "select * from album inner join artist a on album.alb_art_id = a.art_id where alb_name like '%" . $_GET["search"] . "%'";
+                //print $sql;
+                $data = getData($sql);
                 //get template
                 $template = file_get_contents("templates/albumgrid.html");
 
