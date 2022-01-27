@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="47d342e5-94b8-417d-878c-f2c56688e9c0" name="Changes" comment="" />
+    <list default="true" id="47d342e5-94b8-417d-878c-f2c56688e9c0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,9 +21,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/index.html" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3" />
   <component name="ProjectId" id="23ma1nhVIXrmWLYs1oNWNSDD7r5" />
@@ -54,6 +53,7 @@
       <workItem from="1642437440610" duration="606000" />
       <workItem from="1642511249665" duration="14000" />
       <workItem from="1642669721830" duration="421000" />
+      <workItem from="1643273836850" duration="316000" />
     </task>
     <servers />
   </component>
