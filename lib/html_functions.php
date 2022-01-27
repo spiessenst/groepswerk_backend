@@ -43,12 +43,47 @@ function MergeViewWithData( $template, $data )
 
 function MergeViewWithExtraElements( $template, $elements )
 {
+
     foreach ( $elements as $key => $element )
     {
         $template = str_replace( "@$key@", $element, $template );
     }
     return $template;
 }
+
+
+function MergeViewWithExtraElementsGenre( $template, $elements )
+{
+    $genre = "";
+    foreach ($elements as  $element ){
+        $genre .= $element['gr_name'] . ", ";
+    }
+    $genre = substr($genre, 0, -2);
+    $template = str_replace( "@gr_name@", $genre, $template );
+    return $template;
+}
+
+function MergeSongList( $template , $data){
+
+   // print("<pre>".print_r($data,true)."</pre>");
+
+$counter = 1;
+    $songlist = "<table>";
+
+    foreach ($data as $row){
+        $songlist .= "<tr>";
+        $songlist .=  "<td>" . $counter . "</td>";
+        $songlist .=  "<td>" . $row['tr_name']. "</td>";
+        $songlist .=  "<td>" . gmdate("H:i:s", $row['tr_time']). "</td>";
+        $songlist .=  "</tr>";
+        $counter++;
+
+    }
+    $songlist .=  "</table>";
+    $template = str_replace( "@songlisttable@", $songlist, $template );
+return $template;
+}
+
 
 function MergeViewWithErrors( $template, $errors )
 {
