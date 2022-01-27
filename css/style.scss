@@ -313,3 +313,114 @@ footer {
   width: 85%;
   margin-bottom: 100px;
 }
+
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  gap: 150px;
+  flex-wrap: wrap;
+  color: $light-gray;
+
+  .left {
+    flex: 1 1 430px;
+
+    .imgholder {
+      position: relative;
+      width: 316px;
+      height: 316px;
+      z-index: 1;
+      &:after {
+        content: "";
+        position: absolute;
+        background-color: black;
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 150px;
+        z-index: -2;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        background-color: $pink;
+        border-radius: 50%;
+        width: 30%;
+        height: 30%;
+        top: 110px;
+        left: 270px;
+        z-index: -1;
+      }
+    }
+    img {
+      display: block;
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+    }
+    .mirrored {
+      transform: scaleY(-1);
+      height: 30%;
+      opacity: 10%;
+      border-radius: 5px;
+    }
+
+    .recordshadow {
+      position: absolute;
+      clip-path: inset(0 0 70% 52%);
+      background-color: black;
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      top: 316px;
+      left: 150px;
+      opacity: 10%;
+    }
+  }
+
+  .right {
+    flex: 1 1 300px;
+    padding-bottom: 50px;
+
+    .artist {
+      font-size: 35px;
+      margin-bottom: 20px;
+    }
+    .album {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+    .release {
+      font-size: 20px;
+      margin-bottom: 20px;
+      &:before {
+        content: "Releaseyear: ";
+      }
+    }
+    .genre {
+      font-size: 20px;
+      margin-bottom: 20px;
+      &:before {
+        content: "Genre: ";
+      }
+    }
+  }
+
+  .songlist {
+    h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      font-size: 16px;
+      margin-bottom: 20px;
+      td {
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+    }
+  }
+}
+
