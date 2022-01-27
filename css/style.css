@@ -452,6 +452,8 @@ footer .elements .block2 {
   gap: 150px;
   flex-wrap: wrap;
   color: #eee3e3;
+  margin: 0 auto;
+  width: 90%;
 }
 .detail .left {
   flex: 1 1 430px;
