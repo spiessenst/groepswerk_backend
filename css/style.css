@@ -449,11 +449,12 @@ footer .elements .block2 {
 .detail {
   display: flex;
   justify-content: space-between;
-  gap: 150px;
+  gap: 50px;
   flex-wrap: wrap;
   color: #eee3e3;
   margin: 0 auto;
   width: 90%;
+  margin-bottom: 50px;
 }
 .detail .left {
   flex: 1 1 430px;
@@ -509,6 +510,10 @@ footer .elements .block2 {
   left: 150px;
   opacity: 10%;
 }
+.detail .left .spotifyCode {
+  padding-top: 100px;
+  width: 300px;
+}
 .detail .right {
   flex: 1 1 300px;
   padding-bottom: 50px;
@@ -535,18 +540,19 @@ footer .elements .block2 {
 .detail .right .genre:before {
   content: "Genre: ";
 }
-.detail .songlist h2 {
+.detail .right .songlist h2 {
   font-size: 20px;
   margin-bottom: 20px;
 }
-.detail .songlist table {
+.detail .right .songlist table {
   width: 100%;
   font-size: 16px;
   margin-bottom: 20px;
 }
-.detail .songlist table td {
+.detail .right .songlist table td {
   padding-top: 5px;
   padding-bottom: 5px;
+  padding-right: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
