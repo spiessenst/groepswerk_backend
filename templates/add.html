@@ -1,0 +1,104 @@
+<section class="addform">
+
+    <form action="" class="form">
+        <input
+                type="text"
+                name=""
+                id=""
+                class="form__artist"
+                placeholder="Artist"
+                spellcheck="false"
+                _lpchecked="1"
+        />
+        <input
+                type="text"
+                name=""
+                id=""
+                class="form__album"
+                placeholder="Album"
+                spellcheck="false"
+                _lpchecked="1"
+        />
+        <input
+
+                type="text"
+                name=""
+                id=""
+                class="form__releasedate"
+                placeholder="Releasedate"
+                spellcheck="false"
+                _lpchecked="1"
+                onfocus="(this.type = 'date')"
+        />
+
+
+        <select name="genre" multiple size="5" class="form__genre">
+            <option value="pop">Pop</option>
+            <option value="rock">Rock</option>
+            <option value="jazz">Jazz</option>
+            <option value="blues">Blues</option>
+            <option value="pop">Pop</option>
+            <option value="rock">Rock</option>
+            <option value="jazz">Jazz</option>
+            <option value="blues">Blues</option>
+            <option value="pop">Pop</option>
+            <option value="rock">Rock</option>
+            <option value="jazz">Jazz</option>
+            <option value="blues">Blues</option>
+        </select>
+
+        <div class="tracks" id="tracks">
+            <div class="trackrow" id="trackrow">
+                <input
+                        type="text"
+                        name=""
+                        id="track_0"
+                        class="form__track"
+                        placeholder="Track"
+                        spellcheck="false"
+                        _lpchecked="1"
+                />
+
+                <input
+                        type="text"
+                        step="2"
+                        name=""
+                        id="seconds_0"
+                        class="form__seconds"
+                        placeholder="TrackLength"
+                        spellcheck="false"
+                        _lpchecked="1"
+                        onfocus="(this.type = 'time')"
+
+                />
+                <button type="button"  id="addfields"class="addfields" onclick="addtrack(this)"></button>
+                <button type="button"  id="deletefields"class="deletefields" onclick="deletetrack(this)"></button>
+            </div>
+        </div>
+
+        <input
+                type="file"
+                name=""
+                id=""
+                class="form__file"
+                placeholder="Album"
+                spellcheck="false"
+                _lpchecked="1"
+        />
+
+        <input
+                type="text"
+                name=""
+                id=""
+                class="form__url"
+                placeholder="Spotifycode"
+                spellcheck="false"
+                _lpchecked="1"
+        />
+        <button class="form__add" type="submit">Add</button>
+        <button class="form__reset" type="reset">Reset</button>
+    </form>
+
+    </form>
+
+</section>

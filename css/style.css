@@ -554,4 +554,146 @@ footer .elements .block2 {
   padding-right: 10px;
 }
 
+.addform {
+  margin: 0 auto;
+  background-color: #134a51;
+  width: 75%;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 50px;
+}
+.addform .form {
+  position: relative;
+}
+.addform .form input {
+  border: none;
+  background-color: #02343b;
+  border-radius: 7px;
+  height: 35px;
+  width: 90%;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: "Berlin Sans FB";
+  font-size: 18px;
+  outline: none;
+  color: white;
+  margin-bottom: 25px;
+}
+.addform .form .form__releasedate {
+  width: 30%;
+  color-scheme: dark;
+}
+.addform .form .form__track {
+  width: 60%;
+}
+.addform .form .form__seconds {
+  width: 25%;
+  float: right;
+  margin-right: 10%;
+  color-scheme: dark;
+}
+.addform .form .form__file::-webkit-file-upload-button {
+  border: 0;
+  margin-top: 7px;
+  margin-right: 10px;
+  background-color: #f67d7e;
+  border-radius: 5px;
+  font-family: "Berlin Sans FB";
+  color: white;
+  font-size: 16px;
+}
+.addform .form .form__add {
+  border: 0;
+  width: 20%;
+  background-color: #c7f694;
+  color: #f67d7e;
+  font-family: "Berlin Sans FB";
+  padding: 5px 10px 5px 10px;
+  border-radius: 7px;
+  font-size: 16px;
+}
+.addform .form .form__reset {
+  border: 0;
+  width: 20%;
+  background-color: #f67d7e;
+  color: white;
+  font-family: "Berlin Sans FB";
+  padding: 5px 10px 5px 10px;
+  border-radius: 7px;
+  font-size: 16px;
+}
+.addform select {
+  border: none;
+  background-color: #02343b;
+  border-radius: 7px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: "Berlin Sans FB";
+  font-size: 18px;
+  outline: none;
+  color: white;
+  overflow-y: auto;
+  float: right;
+  margin-right: 10%;
+  width: 40%;
+  margin-bottom: 25px;
+}
+.addform ::-webkit-scrollbar {
+  width: 10px;
+  margin-right: 10px;
+}
+.addform ::-webkit-scrollbar-thumb {
+  background-color: #f67d7e;
+  border-radius: 5px;
+}
+.addform select[multiple]:focus option:checked {
+  background: #4cbfcf linear-gradient(0deg, #4cbfcf 0%, #4cbfcf 100%);
+}
+.addform .trackrow .addfields {
+  position: absolute;
+  background-color: #c7f694;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  border: 0;
+  color: white;
+  font-size: 35px;
+  font-family: "Berlin Sans FB";
+  right: 35px;
+  transition: transform 0.3s ease-in-out;
+  margin-top: 2px;
+}
+.addform .trackrow .addfields:hover {
+  transform: rotate(360deg);
+}
+.addform .trackrow .addfields::after {
+  position: absolute;
+  content: "+";
+  top: -6px;
+  left: 8px;
+}
+.addform .trackrow .deletefields {
+  position: absolute;
+  background-color: #f67d7e;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  border: 0;
+  color: white;
+  font-size: 35px;
+  font-family: "Berlin Sans FB";
+  right: -5px;
+  transition: transform 0.3s ease-in-out;
+  margin-top: 2px;
+}
+.addform .trackrow .deletefields:hover {
+  transform: rotate(360deg);
+}
+.addform .trackrow .deletefields::after {
+  position: absolute;
+  content: "-";
+  top: -6px;
+  left: 8px;
+}
+
 /*# sourceMappingURL=style.css.map */
