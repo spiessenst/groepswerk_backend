@@ -487,6 +487,7 @@ footer {
       padding: 5px 10px 5px 10px;
       border-radius: 7px;
       font-size: 16px;
+      cursor: pointer;
     }
 
     .form__reset {
@@ -498,6 +499,7 @@ footer {
       padding: 5px 10px 5px 10px;
       border-radius: 7px;
       font-size: 16px;
+      cursor: pointer;
     }
   }
   select {
@@ -545,6 +547,7 @@ footer {
       transition: transform 0.3s ease-in-out;
       margin-top: 2px;
 
+
       &:hover {
         transform: rotate(360deg);
       }
@@ -554,6 +557,7 @@ footer {
         content: "+";
         top: -6px;
         left: 8px;
+        color:$pink;
       }
     }
     .deletefields {

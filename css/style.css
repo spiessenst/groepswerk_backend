@@ -611,6 +611,7 @@ footer .elements .block2 {
   padding: 5px 10px 5px 10px;
   border-radius: 7px;
   font-size: 16px;
+  cursor: pointer;
 }
 .addform .form .form__reset {
   border: 0;
@@ -621,6 +622,7 @@ footer .elements .block2 {
   padding: 5px 10px 5px 10px;
   border-radius: 7px;
   font-size: 16px;
+  cursor: pointer;
 }
 .addform select {
   border: none;
@@ -671,6 +673,7 @@ footer .elements .block2 {
   content: "+";
   top: -6px;
   left: 8px;
+  color: #f67d7e;
 }
 .addform .trackrow .deletefields {
   position: absolute;
