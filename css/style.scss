@@ -317,11 +317,12 @@ footer {
 .detail {
   display: flex;
   justify-content: space-between;
-  gap: 150px;
+  gap: 50px;
   flex-wrap: wrap;
   color: $light-gray;
   margin: 0 auto;
   width: 90%;
+  margin-bottom: 50px;
 
 
   .left {
@@ -363,9 +364,8 @@ footer {
     }
     .mirrored {
       transform: scaleY(-1);
-      height: 30%;
+      clip-path: inset(70% 0 0 0);
       opacity: 10%;
-      border-radius: 5px;
     }
 
     .recordshadow {
@@ -379,6 +379,12 @@ footer {
       left: 150px;
       opacity: 10%;
     }
+
+    .spotifyCode{
+      padding-top: 100px;
+      width: 300px;
+    }
+
   }
 
   .right {
@@ -407,22 +413,25 @@ footer {
         content: "Genre: ";
       }
     }
-  }
-
-  .songlist {
-    h2 {
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
-    table {
-      width: 100%;
-      font-size: 16px;
-      margin-bottom: 20px;
-      td {
-        padding-top: 5px;
-        padding-bottom: 5px;
+    .songlist {
+      h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+      table {
+        width: 100%;
+        font-size: 16px;
+        margin-bottom: 20px;
+        td {
+          padding-top: 5px;
+          padding-bottom: 5px;
+          padding-right: 10px;
+        }
       }
     }
+
+
   }
+
 }
 
