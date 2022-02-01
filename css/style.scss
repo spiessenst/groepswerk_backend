@@ -364,9 +364,8 @@ footer {
     }
     .mirrored {
       transform: scaleY(-1);
-      height: 30%;
+      clip-path: inset(70% 0 0 0);
       opacity: 10%;
-      border-radius: 5px;
     }
 
     .recordshadow {
@@ -382,9 +381,7 @@ footer {
     }
 
     .spotifyCode{
-
       padding-top: 100px;
-
       width: 300px;
     }
 
