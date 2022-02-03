@@ -1,74 +1,59 @@
 <section class="addform">
 
-    <form action="" class="form">
+    <form enctype="multipart/form-data" action="./lib/save.php" method="POST" class="form">
+
+
+        <input type="hidden" name="csrf" value="@csrf_token@">
         <input
                 type="text"
-                name=""
+                name="art_name"
                 id=""
                 class="form__artist"
                 placeholder="Artist"
                 spellcheck="false"
-                _lpchecked="1"
         />
         <input
                 type="text"
-                name=""
+                name="alb_name"
                 id=""
                 class="form__album"
                 placeholder="Album"
                 spellcheck="false"
-                _lpchecked="1"
         />
         <input
 
                 type="text"
-                name=""
+                name="alb_releasedate"
                 id=""
                 class="form__releasedate"
                 placeholder="Releasedate"
                 spellcheck="false"
-                _lpchecked="1"
-                onfocus="(this.type = 'date')"
+                onfocus="(type = 'date')"
         />
 
+        @select_genre@
 
-        <select name="genre" multiple size="5" class="form__genre">
-            <option value="pop">Pop</option>
-            <option value="rock">Rock</option>
-            <option value="jazz">Jazz</option>
-            <option value="blues">Blues</option>
-            <option value="pop">Pop</option>
-            <option value="rock">Rock</option>
-            <option value="jazz">Jazz</option>
-            <option value="blues">Blues</option>
-            <option value="pop">Pop</option>
-            <option value="rock">Rock</option>
-            <option value="jazz">Jazz</option>
-            <option value="blues">Blues</option>
-        </select>
 
         <div class="tracks" id="tracks">
             <div class="trackrow" id="trackrow">
                 <input
                         type="text"
-                        name=""
+                        name="tr_name[]"
                         id="track_0"
                         class="form__track"
                         placeholder="Track"
                         spellcheck="false"
-                        _lpchecked="1"
                 />
 
                 <input
                         type="text"
                         step="2"
-                        name=""
+                        name="tr_time[]"
                         id="seconds_0"
                         class="form__seconds"
                         placeholder="TrackLength"
                         spellcheck="false"
-                        _lpchecked="1"
-                        onfocus="(this.type = 'time')"
+                        onfocus="(placeholder = '00:00:00');"
 
                 />
                 <button type="button"  id="addfields"class="addfields" onclick="addtrack(this)"></button>
@@ -78,27 +63,27 @@
 
         <input
                 type="file"
-                name=""
+                name="alb_img"
                 id=""
                 class="form__file"
                 placeholder="Album"
                 spellcheck="false"
-                _lpchecked="1"
         />
 
         <input
                 type="text"
-                name=""
+                name="alb_url"
                 id=""
                 class="form__url"
                 placeholder="Spotifycode"
                 spellcheck="false"
-                _lpchecked="1"
         />
+        <div class="formbuttons">
+            <button class="form__reset" type="reset">Reset</button>
         <button class="form__add" type="submit">Add</button>
-        <button class="form__reset" type="reset">Reset</button>
+
+        </div>
     </form>
 
-    </form>
 
 </section>

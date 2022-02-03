@@ -18,3 +18,20 @@ function GenreList($data){
 
 
 }
+
+function GenreSelect($data){
+
+        $list = '<select name="genre[]" multiple size="5" class="form__genre">';
+
+    foreach ( $data as $row ){
+
+        $list .= '<option value="'.$row["gr_id"].'">'.$row["gr_name"].'</option>';
+    }
+    $list .= '</select>';
+
+    return $list;
+}
+
+
+
+

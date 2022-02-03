@@ -11,7 +11,20 @@ PrintHead();
         <?php PrintTop(); ?>
 
         <section class="middle">
-          <?php    print file_get_contents("templates/add.html");?>
+            <?php
+            $data = getData("select * from genre");
+
+
+            $extra_elements['select_genre'] = GenreSelect($data);
+            $extra_elements['csrf_token'] = GenerateCSRF();
+
+
+            $template =  file_get_contents("templates/add.html");
+
+            $output =  MergeViewWithExtraElements( $template , $extra_elements);
+            print $output;
+            ?>
+
         
         </section>
 

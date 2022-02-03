@@ -22,7 +22,7 @@ PrintHead();
             $output  = MergeViewWithData( $output  , $album);
 
             $genre = getData("select * from genre
-join `album-genre` `a-g` on genre.gr_id = `a-g`.gr_id
+join `album_genre` `a-g` on genre.gr_id = `a-g`.gr_id
 where alb_id =" . $_GET['alb_id']);
 
             $output = MergeViewWithExtraElementsGenre ( $output  , $genre);

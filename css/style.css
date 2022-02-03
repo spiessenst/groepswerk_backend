@@ -590,7 +590,6 @@ footer .elements .block2 {
   width: 25%;
   float: right;
   margin-right: 10%;
-  color-scheme: dark;
 }
 .addform .form .form__file::-webkit-file-upload-button {
   border: 0;
@@ -602,7 +601,13 @@ footer .elements .block2 {
   color: white;
   font-size: 16px;
 }
-.addform .form .form__add {
+.addform .form .formbuttons {
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.addform .form .formbuttons .form__add {
   border: 0;
   width: 20%;
   background-color: #c7f694;
@@ -613,7 +618,7 @@ footer .elements .block2 {
   font-size: 16px;
   cursor: pointer;
 }
-.addform .form .form__reset {
+.addform .form .formbuttons .form__reset {
   border: 0;
   width: 20%;
   background-color: #f67d7e;
@@ -656,15 +661,15 @@ footer .elements .block2 {
   position: absolute;
   background-color: #c7f694;
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
   border: 0;
-  color: white;
   font-size: 35px;
   font-family: "Berlin Sans FB";
   right: 35px;
   transition: transform 0.3s ease-in-out;
-  margin-top: 2px;
+  margin-top: 5px;
+  cursor: pointer;
 }
 .addform .trackrow .addfields:hover {
   transform: rotate(360deg);
@@ -672,23 +677,24 @@ footer .elements .block2 {
 .addform .trackrow .addfields::after {
   position: absolute;
   content: "+";
-  top: -6px;
-  left: 8px;
+  top: -8px;
+  left: 6px;
   color: #f67d7e;
 }
 .addform .trackrow .deletefields {
   position: absolute;
   background-color: #f67d7e;
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
   border: 0;
   color: white;
-  font-size: 35px;
+  font-size: 30px;
   font-family: "Berlin Sans FB";
-  right: -5px;
+  right: -4px;
   transition: transform 0.3s ease-in-out;
-  margin-top: 2px;
+  margin-top: 5px;
+  cursor: pointer;
 }
 .addform .trackrow .deletefields:hover {
   transform: rotate(360deg);
@@ -696,8 +702,8 @@ footer .elements .block2 {
 .addform .trackrow .deletefields::after {
   position: absolute;
   content: "-";
-  top: -6px;
-  left: 8px;
+  top: -5px;
+  left: 7px;
 }
 
 /*# sourceMappingURL=style.css.map */

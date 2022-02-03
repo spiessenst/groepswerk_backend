@@ -1,109 +1,61 @@
 <?php
 require_once "autoload.php";
 
-SaveFormData();
+if ( $_SERVER['REQUEST_METHOD'] == "POST" ) {
+    if ( CheckCSRF() ) {
 
-function SaveFormData()
-{
-    if ( $_SERVER['REQUEST_METHOD'] == "POST" )
-    {
-        //controle CSRF token
-        if ( ! key_exists("csrf", $_POST)) die("Missing CSRF");
-        if ( ! hash_equals( $_POST['csrf'], $_SESSION['lastest_csrf'] ) ) die("Problem with CSRF");
+        var_dump($_POST);
+        var_dump($_FILES);
 
-        $_SESSION['lastest_csrf'] = "";
+      $new_artist_id = ExecuteSQL( "INSERT INTO artist (art_name) VALUES ('". $_POST['art_name']."') " );
 
-        //sanitization
-        $_POST = StripSpaces($_POST);
-        $_POST = ConvertSpecialChars($_POST);
+      $new_album_id = ExecuteSQL ("INSERT INTO album (alb_name , alb_releasedate , alb_url , alb_img , alb_art_id) VALUES ('". $_POST['alb_name']."' , '".$_POST['alb_releasedate']."' , '".$_POST['alb_url']."' ,'".$_FILES['alb_img']['name']."', '".$new_artist_id."') ");
 
 
+      $tracks = $_POST['tr_name'];
+      $seconds = $_POST['tr_time'];
 
-        $table = $pkey = $update = $insert = $where = $str_keys_values = "";
+      for($i =0 ; $i < count($tracks) ; $i++){
+          ExecuteSQL ( "INSERT INTO track (tr_name , tr_time , tr_alb_id ) VALUES ('". $tracks[$i]. "' , '".$seconds[$i]."' , '".$new_album_id."')");
+      }
 
-        //get important metadata
-        if ( ! key_exists("table", $_POST)) die("Missing table");
-        if ( ! key_exists("pkey", $_POST)) die("Missing pkey");
+      $genres = $_POST['genre'];
 
-        $table = $_POST['table'];
-        $pkey = $_POST['pkey'];
+      foreach ($genres as $genre){
+          ExecuteSQL("INSERT INTO album_genre ( alb_id , gr_id) VALUES ('".$new_album_id."' , '".$genre."')");
+      }
 
-        //validation
-        $sending_form_uri = $_SERVER['HTTP_REFERER'];
-        CompareWithDatabase( $table, $pkey );
+        $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/images/';
+        $uploadfile = $uploaddir . basename($_FILES['alb_img']['name']);
 
 
-        if (  key_exists("usr_password", $_POST)) {
 
-            ValidateUsrPassword($_POST['usr_password'] , $_POST['usr_password2']);
-            $_POST['usr_password'] = password_hash( $_POST['usr_password'], PASSWORD_BCRYPT );
+
+
+        if (move_uploaded_file($_FILES['alb_img']['tmp_name'], $uploadfile)) {
+            echo "File is valid, and was successfully uploaded.\n";
+        } else {
+            echo "Possible file upload attack!\n";
         }
 
-        if (  key_exists("usr_email", $_POST))  {
-            ValidateUsrEmail($_POST['usr_email']);
-            CheckUniqueUsrEmail(($_POST['usr_email']));
-        }
 
-        ValidateEmpty($_POST);
-
-        //terugkeren naar afzender als er een fout is
-        if ( count($_SESSION['errors']) > 0 ) {
-            header( "Location: " . $sending_form_uri );
-            $_SESSION['OLD_POST'] = $_POST;
-            exit();
-        }
-
-        //insert or update?
-        if ( $_POST["$pkey"] > 0 ) $update = true;
-        else $insert = true;
-
-        if ( $update ) $sql = "UPDATE $table SET ";
-        if ( $insert ) $sql = "INSERT INTO $table SET ";
-
-        //make key-value string part of SQL statement
-        $keys_values = [];
-
-        foreach ( $_POST as $field => $value )
-        {
-            //skip non-data fields
-            if ( in_array( $field, [ 'table', 'pkey', 'afterinsert', 'afterupdate', 'csrf' , 'msgs', 'usr_password2' ] ) ) continue;
-
-            //handle primary key field
-            if ( $field == $pkey )
-            {
-                if ( $update ) $where = " WHERE $pkey = $value ";
-                continue;
-            }
-
-
-
-            //all other data-fields
-            $keys_values[] = " $field = '$value' " ;
-        }
-
-        $str_keys_values = implode(" , ", $keys_values );
-
-        //extend SQL with key-values
-        $sql .= $str_keys_values;
-
-        //extend SQL with WHERE
-        $sql .= $where;
-
-        //run SQL
-        $result = ExecuteSQL( $sql );
-
-
-
-        //output if not redirected
-        print $sql ;
-        print "<br>";
-        print $result->rowCount() . " records affected";
-
-        $_SESSION['msgs'] = $_POST['msgs'];
-
-        //redirect after insert or update
-        if ( $insert AND $_POST["afterinsert"] > "" ) header("Location: ../" . $_POST["afterinsert"] );
-        if ( $update AND $_POST["afterupdate"] > "" ) header("Location: ../" . $_POST["afterupdate"] );
+        header("Location: ../" . 'index.php');
     }
+
+
+
 }
+
+function CheckCSRF()
+{
+    if ( ! key_exists("csrf", $_POST)) die("Missing CSRF");
+    if ( ! hash_equals( $_POST['csrf'], $_SESSION['lastest_csrf'] ) ) die("Problem with CSRF");
+
+    $_SESSION['lastest_csrf'] = "";
+
+    return true;
+
+}
+
+
 

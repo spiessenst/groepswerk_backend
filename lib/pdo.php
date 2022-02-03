@@ -48,7 +48,8 @@ function ExecuteSQL( $sql )
     CreateConnection();
 
     //define and execute query
-    $result = $conn->query( $sql );
+    $conn->query( $sql );
+    $last_ID = $conn->lastInsertId();
 
-    return $result;
+    return $last_ID;
 }
