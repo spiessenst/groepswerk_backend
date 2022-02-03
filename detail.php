@@ -22,7 +22,7 @@ PrintHead();
             $output  = MergeViewWithData( $output  , $album);
 
             $genre = getData("select * from genre
-join `album-genre` `a-g` on genre.gr_id = `a-g`.gr_id
+join `album_genre` `a-g` on genre.gr_id = `a-g`.gr_id
 where alb_id =" . $_GET['alb_id']);
 
             $output = MergeViewWithExtraElementsGenre ( $output  , $genre);
@@ -31,6 +31,10 @@ where alb_id =" . $_GET['alb_id']);
 where tr_alb_id=". $_GET['alb_id']. " order by tr_id");
 
            $output =  MergeSongList($output , $songlist);
+
+            $extra_elements['csrf_token'] = GenerateCSRF();
+
+            $output =  MergeViewWithExtraElements( $output , $extra_elements);
 
             print $output;
 

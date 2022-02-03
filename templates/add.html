@@ -1,0 +1,89 @@
+<section class="addform">
+
+    <form enctype="multipart/form-data" action="./lib/save.php" method="POST" class="form">
+
+
+        <input type="hidden" name="csrf" value="@csrf_token@">
+        <input
+                type="text"
+                name="art_name"
+                id=""
+                class="form__artist"
+                placeholder="Artist"
+                spellcheck="false"
+        />
+        <input
+                type="text"
+                name="alb_name"
+                id=""
+                class="form__album"
+                placeholder="Album"
+                spellcheck="false"
+        />
+        <input
+
+                type="text"
+                name="alb_releasedate"
+                id=""
+                class="form__releasedate"
+                placeholder="Releasedate"
+                spellcheck="false"
+                onfocus="(type = 'date')"
+        />
+
+        @select_genre@
+
+
+        <div class="tracks" id="tracks">
+            <div class="trackrow" id="trackrow">
+                <input
+                        type="text"
+                        name="tr_name[]"
+                        id="track_0"
+                        class="form__track"
+                        placeholder="Track"
+                        spellcheck="false"
+                />
+
+                <input
+                        type="text"
+                        step="2"
+                        name="tr_time[]"
+                        id="seconds_0"
+                        class="form__seconds"
+                        placeholder="TrackLength"
+                        spellcheck="false"
+                        onfocus="(placeholder = '00:00:00');"
+
+                />
+                <button type="button"  id="addfields"class="addfields" onclick="addtrack(this)"></button>
+                <button type="button"  id="deletefields"class="deletefields" onclick="deletetrack(this)"></button>
+            </div>
+        </div>
+
+        <input
+                type="file"
+                name="alb_img"
+                id=""
+                class="form__file"
+                placeholder="Album"
+                spellcheck="false"
+        />
+
+        <input
+                type="text"
+                name="alb_url"
+                id=""
+                class="form__url"
+                placeholder="Spotifycode"
+                spellcheck="false"
+        />
+        <div class="formbuttons">
+            <button class="form__reset" type="reset">Reset</button>
+        <button class="form__add" type="submit">Add</button>
+
+        </div>
+    </form>
+
+
+</section>

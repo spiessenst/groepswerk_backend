@@ -125,7 +125,6 @@ main {
   }
 }
 
-
 .genre_links {
   font-family: "Berlin Sans FB";
   font-size: 14px;
@@ -313,7 +312,6 @@ footer {
   margin-bottom: 100px;
 }
 
-
 .detail {
   display: flex;
   justify-content: space-between;
@@ -326,7 +324,7 @@ footer {
 
 
   .left {
-    flex: 1 1 430px;
+    flex : 1 1 430px;
 
     .imgholder {
       position: relative;
@@ -380,16 +378,29 @@ footer {
       opacity: 10%;
     }
 
-    .spotifyCode{
+    .spotifyCode {
       padding-top: 100px;
       width: 300px;
     }
-
   }
 
   .right {
     flex: 1 1 300px;
     padding-bottom: 50px;
+
+    .delete_button{
+      border: 0;
+      width: 20%;
+      background-color: red;
+      color: white;
+      font-family: "Berlin Sans FB";
+      padding: 5px 15px 5px 15px;
+      border-radius: 7px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      float: right;
+    }
 
     .artist {
       font-size: 35px;
@@ -429,9 +440,173 @@ footer {
         }
       }
     }
+  }
+}
 
+
+.addform {
+  margin: 0 auto;
+  background-color: $form-back-green;
+  width: 75%;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 50px;
+  .form {
+    position: relative;
+    input {
+      border: none;
+      background-color: $darker-green;
+      border-radius: 7px;
+      height: 35px;
+      width: 90%;
+      padding-left: 30px;
+      padding-right: 30px;
+      font-family: "Berlin Sans FB";
+      font-size: 18px;
+      outline: none;
+      color: white;
+      margin-bottom: 25px;
+    }
+    .form__releasedate {
+      width: 30%;
+      color-scheme: dark;
+    }
+    .form__track {
+      width: 60%;
+    }
+    .form__seconds {
+      width: 25%;
+      float: right;
+      margin-right: 10%;
+    }
+
+    .form__file {
+      &::-webkit-file-upload-button {
+        border: 0;
+        margin-top: 7px;
+        margin-right: 10px;
+        background-color: $pink;
+        border-radius: 5px;
+        font-family: "Berlin Sans FB";
+        color: white;
+        font-size: 16px;
+      }
+    }
+    .formbuttons{
+      width: 90%;
+      display: flex;
+      justify-content: flex-end;
+      gap :20px;
+
+    .form__add {
+      border: 0;
+      width: 20%;
+      background-color: $light-green;
+      color: $pink;
+      font-family: "Berlin Sans FB";
+      padding: 5px 10px 5px 10px;
+      border-radius: 7px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .form__reset {
+      border: 0;
+      width: 20%;
+      background-color: $pink;
+      color: white;
+      font-family: "Berlin Sans FB";
+      padding: 5px 10px 5px 10px;
+      border-radius: 7px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+  }
+  select {
+    border: none;
+    background-color: $darker-green;
+    border-radius: 7px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top:  10px;
+    font-family: "Berlin Sans FB";
+    font-size: 16px;
+    outline: none;
+    color: white;
+    overflow-y: auto;
+    float: right;
+    margin-right: 10%;
+    width: 40%;
+    margin-bottom: 25px;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    margin-right: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: $pink;
+    border-radius: 5px;
+  }
+
+  select[multiple]:focus option:checked {
+    background: $light-blue
+    linear-gradient(0deg, $light-blue 0%, $light-blue 100%);
 
   }
 
-}
+  .trackrow {
+    .addfields {
+      position: absolute;
+      background-color: $light-green;
+      border-radius: 50%;
+      height: 25px;
+      width: 25px;
+      border: 0;
+      font-size: 35px;
+      font-family: "Berlin Sans FB";
+      right: 35px;
+      transition: transform 0.3s ease-in-out;
+      margin-top: 5px;
+      cursor: pointer;
 
+      &:hover {
+        transform: rotate(360deg);
+      }
+
+      &::after {
+        position: absolute;
+        content: "+";
+        top: -8px;
+        left: 6px;
+        color:$pink;
+      }
+    }
+    .deletefields {
+      position: absolute;
+      background-color: $pink;
+      border-radius: 50%;
+      height: 25px;
+      width: 25px;
+      border: 0;
+      color: white;
+      font-size: 30px;
+      font-family: "Berlin Sans FB";
+      right: -4px;
+      transition: transform 0.3s ease-in-out;
+      margin-top: 5px;
+      cursor: pointer;
+
+      &:hover {
+        transform: rotate(360deg);
+      }
+
+      &::after {
+        position: absolute;
+        content: "-";
+        top: -5px;
+        left: 7px;
+      }
+    }
+  }
+}

@@ -29,7 +29,7 @@ PrintHead();
                     }
                     if ($_GET["gr_id"]) {   //if it was a genre that has been clicked
                         $sql = "select * from genre 
-                            inner join `album-genre` `a-g` on genre.gr_id = `a-g`.gr_id
+                            inner join `album_genre` `a-g` on genre.gr_id = `a-g`.gr_id
                             inner join album a on `a-g`.alb_id = a.alb_id
                             inner join artist a2 on a.alb_art_id = a2.art_id
                             where genre.gr_id=" . $_GET["gr_id"];
