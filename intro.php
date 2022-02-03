@@ -8,7 +8,7 @@ PrintHead();
 
     <main>
 
-        <?php PrintTop(); ?>
+        <?php PrintIntro(); ?>
 
         <section class="middle">
 
