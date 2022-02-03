@@ -32,6 +32,10 @@ where tr_alb_id=". $_GET['alb_id']. " order by tr_id");
 
            $output =  MergeSongList($output , $songlist);
 
+            $extra_elements['csrf_token'] = GenerateCSRF();
+
+            $output =  MergeViewWithExtraElements( $output , $extra_elements);
+
             print $output;
 
             ?>

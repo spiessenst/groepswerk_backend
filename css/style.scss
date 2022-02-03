@@ -322,8 +322,9 @@ footer {
   width: 90%;
   margin-bottom: 50px;
 
+
   .left {
-    flex: 1 1 430px;
+    flex : 1 1 430px;
 
     .imgholder {
       position: relative;
@@ -386,6 +387,20 @@ footer {
   .right {
     flex: 1 1 300px;
     padding-bottom: 50px;
+
+    .delete_button{
+      border: 0;
+      width: 20%;
+      background-color: red;
+      color: white;
+      font-family: "Berlin Sans FB";
+      padding: 5px 15px 5px 15px;
+      border-radius: 7px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      float: right;
+    }
 
     .artist {
       font-size: 35px;

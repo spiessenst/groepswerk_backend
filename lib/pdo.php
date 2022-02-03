@@ -53,3 +53,16 @@ function ExecuteSQL( $sql )
 
     return $last_ID;
 }
+
+function ExecuteSQL2( $sql )
+{
+    global $conn;
+
+    CreateConnection();
+
+    //define and execute query
+    $result =$conn->query( $sql );
+
+
+    return $result;
+}

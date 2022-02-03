@@ -4,8 +4,8 @@ require_once "autoload.php";
 if ( $_SERVER['REQUEST_METHOD'] == "POST" ) {
     if ( CheckCSRF() ) {
 
-        var_dump($_POST);
-        var_dump($_FILES);
+      //$_POST = StripSpaces($_POST);
+     // $_POST = ConvertSpecialChars($_POST);
 
       $new_artist_id = ExecuteSQL( "INSERT INTO artist (art_name) VALUES ('". $_POST['art_name']."') " );
 
@@ -15,8 +15,14 @@ if ( $_SERVER['REQUEST_METHOD'] == "POST" ) {
       $tracks = $_POST['tr_name'];
       $seconds = $_POST['tr_time'];
 
+
       for($i =0 ; $i < count($tracks) ; $i++){
-          ExecuteSQL ( "INSERT INTO track (tr_name , tr_time , tr_alb_id ) VALUES ('". $tracks[$i]. "' , '".$seconds[$i]."' , '".$new_album_id."')");
+
+
+          $second =  strtotime($seconds[$i]) - strtotime('TODAY');
+
+
+          ExecuteSQL ( "INSERT INTO track (tr_name , tr_time , tr_alb_id ) VALUES ('". $tracks[$i]. "' , '".$second."' , '".$new_album_id."')");
       }
 
       $genres = $_POST['genre'];
@@ -27,9 +33,6 @@ if ( $_SERVER['REQUEST_METHOD'] == "POST" ) {
 
         $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/images/';
         $uploadfile = $uploaddir . basename($_FILES['alb_img']['name']);
-
-
-
 
 
         if (move_uploaded_file($_FILES['alb_img']['tmp_name'], $uploadfile)) {
