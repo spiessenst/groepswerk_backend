@@ -19,13 +19,8 @@ PrintHead();
                     if ($_GET["search"]) {   // if it was the search bar
                         $sql = "select * from album 
                             inner join artist a on album.alb_art_id = a.art_id 
-                            where alb_name like '%" . $_GET["search"] . "%'";
+                            where alb_name like '%" . $_GET["search"] . "%' or art_name like '%" . $_GET["search"] . "%'";
                         $data = getData($sql);
-                        if (!$data) {    //if there was nothing in the album table, search in the artist table
-                            $sql = "select * from artist 
-                                inner join album a on artist.art_id = a.alb_art_id 
-                                where art_name like '%" . $_GET["search"] . "%'";
-                        }
                     }
                     if ($_GET["gr_id"]) {   //if it was a genre that has been clicked
                         $sql = "select * from genre 

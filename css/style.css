@@ -719,4 +719,36 @@ footer .elements .block2 {
   left: 7px;
 }
 
+.intro .top {
+  padding-top: 100px;
+  display: block;
+}
+.intro .top .logo {
+  padding-bottom: 65px;
+  margin: 0 auto;
+  text-align: center;
+}
+.intro .top nav {
+  align-items: center;
+}
+.intro .top nav ul {
+  padding-bottom: 50px;
+}
+.intro .top nav form {
+  text-align: start;
+}
+.intro .top nav .form__search {
+  padding-left: 26px;
+  padding-right: 255px;
+}
+.intro p {
+  text-align: center;
+  color: white;
+  margin-top: 100px;
+  margin-bottom: 10px;
+}
+.intro .genre_links ul {
+  justify-content: center;
+}
+
 /*# sourceMappingURL=style.css.map */

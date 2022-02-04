@@ -322,9 +322,8 @@ footer {
   width: 90%;
   margin-bottom: 50px;
 
-
   .left {
-    flex : 1 1 430px;
+    flex: 1 1 430px;
 
     .imgholder {
       position: relative;
@@ -388,7 +387,7 @@ footer {
     flex: 1 1 300px;
     padding-bottom: 50px;
 
-    .delete_button{
+    .delete_button {
       border: 0;
       width: 20%;
       background-color: red;
@@ -443,7 +442,6 @@ footer {
   }
 }
 
-
 .addform {
   margin: 0 auto;
   background-color: $form-back-green;
@@ -492,36 +490,36 @@ footer {
         font-size: 16px;
       }
     }
-    .formbuttons{
+    .formbuttons {
       width: 90%;
       display: flex;
       justify-content: flex-end;
-      gap :20px;
+      gap: 20px;
 
-    .form__add {
-      border: 0;
-      width: 20%;
-      background-color: $light-green;
-      color: $pink;
-      font-family: "Berlin Sans FB";
-      padding: 5px 10px 5px 10px;
-      border-radius: 7px;
-      font-size: 16px;
-      cursor: pointer;
-    }
+      .form__add {
+        border: 0;
+        width: 20%;
+        background-color: $light-green;
+        color: $pink;
+        font-family: "Berlin Sans FB";
+        padding: 5px 10px 5px 10px;
+        border-radius: 7px;
+        font-size: 16px;
+        cursor: pointer;
+      }
 
-    .form__reset {
-      border: 0;
-      width: 20%;
-      background-color: $pink;
-      color: white;
-      font-family: "Berlin Sans FB";
-      padding: 5px 10px 5px 10px;
-      border-radius: 7px;
-      font-size: 16px;
-      cursor: pointer;
+      .form__reset {
+        border: 0;
+        width: 20%;
+        background-color: $pink;
+        color: white;
+        font-family: "Berlin Sans FB";
+        padding: 5px 10px 5px 10px;
+        border-radius: 7px;
+        font-size: 16px;
+        cursor: pointer;
+      }
     }
-  }
   }
   select {
     border: none;
@@ -529,7 +527,7 @@ footer {
     border-radius: 7px;
     padding-left: 30px;
     padding-right: 30px;
-    padding-top:  10px;
+    padding-top: 10px;
     font-family: "Berlin Sans FB";
     font-size: 16px;
     outline: none;
@@ -551,8 +549,7 @@ footer {
 
   select[multiple]:focus option:checked {
     background: $light-blue
-    linear-gradient(0deg, $light-blue 0%, $light-blue 100%);
-
+      linear-gradient(0deg, $light-blue 0%, $light-blue 100%);
   }
 
   .trackrow {
@@ -579,7 +576,7 @@ footer {
         content: "+";
         top: -8px;
         left: 6px;
-        color:$pink;
+        color: $pink;
       }
     }
     .deletefields {
@@ -608,5 +605,39 @@ footer {
         left: 7px;
       }
     }
+  }
+}
+
+.intro {
+  .top {
+    padding-top: 100px;
+    display: block;
+    .logo {
+      padding-bottom: 65px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    nav {
+      align-items: center;
+      ul {
+        padding-bottom: 50px;
+      }
+      form {
+        text-align: start;
+      }
+      .form__search {
+        padding-left: 26px;
+        padding-right: 255px;
+      }
+    }
+  }
+  p {
+    text-align: center;
+    color: white;
+    margin-top: 100px;
+    margin-bottom: 10px;
+  }
+  .genre_links ul {
+    justify-content: center;
   }
 }

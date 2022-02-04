@@ -22,6 +22,12 @@ function PrintMiddle(){
     print $middle;
 }
 
+function PrintIntro()
+{
+    $intro = file_get_contents("templates/intro.html");
+    print $intro;
+}
+
 function MergeViewWithData( $template, $data )
 {
     $returnvalue = "";
