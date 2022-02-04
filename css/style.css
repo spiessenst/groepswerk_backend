@@ -741,5 +741,14 @@ footer .elements .block2 {
   padding-left: 26px;
   padding-right: 255px;
 }
+.intro p {
+  text-align: center;
+  color: white;
+  margin-top: 100px;
+  margin-bottom: 10px;
+}
+.intro .genre_links ul {
+  justify-content: center;
+}
 
 /*# sourceMappingURL=style.css.map */

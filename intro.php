@@ -16,11 +16,12 @@ PrintHead();
 
     </main>
 
-<?php
-//$data = getData("select * from genre");
-//print GenreList($data)  //print the genres?>
-
-<?php //PrintFooter();
+    <div class="intro">
+    <?php
+$data = getData("select * from genre");
+print GenreList($data)  //print the genres?>
+</div>
+<?php PrintFooter();
 
 
 
