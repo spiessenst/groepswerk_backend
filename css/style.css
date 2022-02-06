@@ -368,7 +368,7 @@ footer .elements .block2 {
   row-gap: 40px;
 }
 .albumgrid .item {
-  flex: 1 1 350px;
+  flex: 0.25 1 350px;
   height: 350px;
   background-color: #02343b;
   border-radius: 9px;
@@ -380,27 +380,17 @@ footer .elements .block2 {
   width: 75%;
   height: 50%;
   margin: 0 auto;
-  position: relative;
   margin-bottom: 25px;
   z-index: 1;
-}
-.albumgrid .item .imageholder .circle {
-  top: 0px;
-  right: 73px;
-  height: 135px;
-  width: 135px;
-  background-color: black;
-  border-radius: 50%;
-  position: absolute;
-  z-index: -1;
 }
 .albumgrid .item .imageholder img {
   display: block;
   object-fit: cover;
-  width: 50%;
+  width: 75%;
   height: auto;
   max-height: 200px;
   max-width: 200px;
+  margin: 0 auto;
 }
 .albumgrid .item .imageholder .mirrored {
   transform: scaleY(-1);
@@ -424,17 +414,6 @@ footer .elements .block2 {
   background-color: #4cbfcf;
   transform: scale(1.05);
   transition: 1s;
-}
-
-.circle:after {
-  content: "";
-  position: absolute;
-  height: 60px;
-  width: 60px;
-  background-color: #eee3e3;
-  border-radius: 50%;
-  top: 36px;
-  right: 34px;
 }
 
 .pagenumbers p {

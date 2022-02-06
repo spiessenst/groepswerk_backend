@@ -233,7 +233,7 @@ footer {
   column-gap: 25px;
   row-gap: 40px;
   .item {
-    flex: 1 1 350px;
+    flex: 0.25 1 350px;
     height: 350px;
     background-color: $darker-green;
     border-radius: 9px;
@@ -244,26 +244,27 @@ footer {
       width: 75%;
       height: 50%;
       margin: 0 auto;
-      position: relative;
+      // position: relative;
       margin-bottom: 25px;
       z-index: 1;
-      .circle {
-        top: 0px;
-        right: 73px;
-        height: 135px;
-        width: 135px;
-        background-color: black;
-        border-radius: 50%;
-        position: absolute;
-        z-index: -1;
-      }
+      // .circle {
+      //   top: 0px;
+      //   right: 73px;
+      //   height: 135px;
+      //   width: 135px;
+      //   background-color: black;
+      //   border-radius: 50%;
+      //   position: absolute;
+      //   z-index: -1;
+      // }
       img {
         display: block;
         object-fit: cover;
-        width: 50%;
+        width: 75%;
         height: auto;
         max-height: 200px;
         max-width: 200px;
+        margin: 0 auto;
       }
       .mirrored {
         transform: scaleY(-1);
@@ -292,16 +293,16 @@ footer {
   transition: 1s;
 }
 
-.circle:after {
-  content: "";
-  position: absolute;
-  height: 60px;
-  width: 60px;
-  background-color: $light-gray;
-  border-radius: 50%;
-  top: 36px;
-  right: 34px;
-}
+// .circle:after {
+//   content: "";
+//   position: absolute;
+//   height: 60px;
+//   width: 60px;
+//   background-color: $light-gray;
+//   border-radius: 50%;
+//   top: 36px;
+//   right: 34px;
+// }
 
 .pagenumbers p {
   color: rgba(245, 241, 241, 0.849);
