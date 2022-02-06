@@ -368,7 +368,7 @@ footer .elements .block2 {
   row-gap: 40px;
 }
 .albumgrid .item {
-  flex: 0.25 1 350px;
+  flex: 1 1 350px;
   height: 350px;
   background-color: #02343b;
   border-radius: 9px;
@@ -414,6 +414,10 @@ footer .elements .block2 {
   background-color: #4cbfcf;
   transform: scale(1.05);
   transition: 1s;
+}
+
+.item:last-of-type {
+  flex: 0.03 1 350px;
 }
 
 .pagenumbers p {
@@ -728,6 +732,32 @@ footer .elements .block2 {
 }
 .intro .genre_links ul {
   justify-content: center;
+}
+
+@media screen and (max-width: 1250px) {
+  .top {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .top nav {
+    align-items: center;
+  }
+  .top nav ul {
+    display: flex;
+    margin-top: 34px;
+  }
+
+  .item {
+    flex: 0.03 1 350px;
+  }
+}
+@media screen and (max-width: 1053px) {
+  .item {
+    display: block;
+    margin: 0 auto;
+    max-width: 500px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

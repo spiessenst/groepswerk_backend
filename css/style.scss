@@ -233,7 +233,7 @@ footer {
   column-gap: 25px;
   row-gap: 40px;
   .item {
-    flex: 0.25 1 350px;
+    flex: 1 1 350px;
     height: 350px;
     background-color: $darker-green;
     border-radius: 9px;
@@ -291,6 +291,10 @@ footer {
   background-color: $light-blue;
   transform: scale(1.05);
   transition: 1s;
+}
+
+.item:last-of-type {
+  flex: 0.03 1 350px;
 }
 
 // .circle:after {
@@ -640,5 +644,30 @@ footer {
   }
   .genre_links ul {
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .top {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    nav {
+      align-items: center;
+      ul {
+        display: flex;
+        margin-top: 34px;
+      }
+    }
+  }
+  .item {
+    flex: 0.03 1 350px;
+  }
+}
+@media screen and (max-width: 1053px) {
+  .item {
+    display: block;
+    margin: 0 auto;
+    max-width: 500px;
   }
 }
