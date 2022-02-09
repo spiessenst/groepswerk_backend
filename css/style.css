@@ -360,6 +360,7 @@ footer .elements .block2 {
   margin-top: 32px;
   margin-bottom: 38px;
   max-width: 1940px;
+  justify-content: center;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
