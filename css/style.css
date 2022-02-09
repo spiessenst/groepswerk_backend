@@ -363,13 +363,17 @@ footer .elements .block2 {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   column-gap: 25px;
   row-gap: 40px;
+}
+.albumgrid p {
+  color: white;
+  font-size: 20px;
 }
 .albumgrid .item {
   flex: 1 1 350px;
   height: 350px;
+  max-width: 350px;
   background-color: #02343b;
   border-radius: 9px;
   padding-top: 47px;
@@ -414,10 +418,6 @@ footer .elements .block2 {
   background-color: #4cbfcf;
   transform: scale(1.05);
   transition: 1s;
-}
-
-.item:last-of-type {
-  flex: 0.03 1 350px;
 }
 
 .pagenumbers p {
