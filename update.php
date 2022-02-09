@@ -19,7 +19,7 @@ PrintHead();
             $extra_elements['csrf_token'] = GenerateCSRF();
 
 
-            $template =  file_get_contents("templates/add.html");
+            $template =  file_get_contents("templates/update.html");
 
             $output =  MergeViewWithExtraElements( $template , $extra_elements);
             print $output;
