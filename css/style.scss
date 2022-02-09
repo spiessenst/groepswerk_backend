@@ -229,7 +229,6 @@ footer {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   column-gap: 25px;
   row-gap: 40px;
   p {
@@ -239,6 +238,7 @@ footer {
   .item {
     flex: 1 1 350px;
     height: 350px;
+    max-width: 350px;
     background-color: $darker-green;
     border-radius: 9px;
     padding-top: 47px;
@@ -297,9 +297,9 @@ footer {
   transition: 1s;
 }
 
-.item:last-of-type {
-  flex: 0.03 1 350px;
-}
+// .item:last-of-type {
+//   flex: 0.03 1 350px;
+// }
 
 // .circle:after {
 //   content: "";
