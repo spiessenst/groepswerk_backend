@@ -29,9 +29,7 @@
       allowfullscreen=""
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
     ></iframe>
-    <a href="./update.php?alb_id=@alb_id@">
-      <button>Edit</button>
-    </a>
+
     <form
       action="./lib/delete.php"
       method="post"
@@ -41,5 +39,8 @@
       <input type="hidden" name="alb_id" value="@alb_id@" />
       <button class="delete_button" type="submit">Delete</button>
     </form>
+    <a href="./update.php?alb_id=@alb_id@">
+      <button class="edit_button">Edit</button>
+    </a>
   </section>
 </section>
