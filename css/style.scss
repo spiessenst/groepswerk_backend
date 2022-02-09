@@ -232,6 +232,10 @@ footer {
   justify-content: space-between;
   column-gap: 25px;
   row-gap: 40px;
+  p {
+    color: white;
+    font-size: 20px;
+  }
   .item {
     flex: 1 1 350px;
     height: 350px;

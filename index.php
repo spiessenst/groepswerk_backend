@@ -28,15 +28,17 @@ PrintHead();
                             inner join album a on `a-g`.alb_id = a.alb_id
                             inner join artist a2 on a.alb_art_id = a2.art_id
                             where genre.gr_id=" . $_GET["gr_id"];
-
                     }
-                } else {  //if nothing was used, show all albums
+                } else {  //if nothing no search was used, show all albums
                     $sql = "select * from album inner join artist a on album.alb_art_id = a.art_id";
-
                 }
 
                 // get data
                 $data = getData($sql);
+
+                if (!$data){
+                    echo "<p>Er zijn geen resultaten gevonden. Gelieve een andere zoekterm te proberen</p>";
+                }
 
                 //get template
                 $template = file_get_contents("templates/albumgrid.html");

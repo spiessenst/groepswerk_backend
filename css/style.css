@@ -367,6 +367,10 @@ footer .elements .block2 {
   column-gap: 25px;
   row-gap: 40px;
 }
+.albumgrid p {
+  color: white;
+  font-size: 20px;
+}
 .albumgrid .item {
   flex: 1 1 350px;
   height: 350px;
