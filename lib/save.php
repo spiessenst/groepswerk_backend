@@ -3,33 +3,36 @@ require_once "autoload.php";
 
 if ( $_SERVER['REQUEST_METHOD'] == "POST" ) {
     if ( CheckCSRF() ) {
+        // print("<pre>".print_r($_POST,true)."</pre>");
+        $_POST = StripSpaces($_POST);
+        $_POST = ConvertSpecialChars($_POST);
 
-      //$_POST = StripSpaces($_POST);
-     // $_POST = ConvertSpecialChars($_POST);
+        $new_artist_id = ExecuteSQL( "INSERT INTO artist (art_name) VALUES ('". $_POST['art_name']."') " );
 
-      $new_artist_id = ExecuteSQL( "INSERT INTO artist (art_name) VALUES ('". $_POST['art_name']."') " );
-
-      $new_album_id = ExecuteSQL ("INSERT INTO album (alb_name , alb_releasedate , alb_url , alb_img , alb_art_id) VALUES ('". $_POST['alb_name']."' , '".$_POST['alb_releasedate']."' , '".$_POST['alb_url']."' ,'".$_FILES['alb_img']['name']."', '".$new_artist_id."') ");
-
-
-      $tracks = $_POST['tr_name'];
-      $seconds = $_POST['tr_time'];
+        $new_album_id = ExecuteSQL ("INSERT INTO album (alb_name , alb_releasedate , alb_url , alb_img , alb_art_id) VALUES ('". $_POST['alb_name']."' , '".$_POST['alb_releasedate']."' , '".$_POST['alb_url']."' ,'".$_FILES['alb_img']['name']."', '".$new_artist_id."') ");
 
 
-      for($i =0 ; $i < count($tracks) ; $i++){
+        $tracks = $_POST['tr_name'];
+        $tracks = StripSpaces($tracks);
+        $tracks = ConvertSpecialChars($tracks);
+        $seconds = $_POST['tr_time'];
 
 
-          $second =  strtotime($seconds[$i]) - strtotime('TODAY');
+        for($i =0 ; $i < count($tracks) ; $i++){
 
 
-          ExecuteSQL ( "INSERT INTO track (tr_name , tr_time , tr_alb_id ) VALUES ('". $tracks[$i]. "' , '".$second."' , '".$new_album_id."')");
-      }
+            $second =  strtotime($seconds[$i]) - strtotime('TODAY');
 
-      $genres = $_POST['genre'];
 
-      foreach ($genres as $genre){
-          ExecuteSQL("INSERT INTO album_genre ( alb_id , gr_id) VALUES ('".$new_album_id."' , '".$genre."')");
-      }
+            ExecuteSQL ( "INSERT INTO track (tr_name , tr_time , tr_alb_id ) VALUES ('". $tracks[$i]. "' , '".$second."' , '".$new_album_id."')");
+        }
+
+        $genres = $_POST['genre'];
+
+        foreach ($genres as $genre){
+            ExecuteSQL("INSERT INTO album_genre ( alb_id , gr_id) VALUES ('".$new_album_id."' , '".$genre."')");
+
+        }
 
         $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/images/';
         $uploadfile = $uploaddir . basename($_FILES['alb_img']['name']);

@@ -592,6 +592,7 @@ footer .elements .block2 {
   width: 25%;
   float: right;
   margin-right: 10%;
+  color-scheme: dark;
 }
 .addform .form .form__file::-webkit-file-upload-button {
   border: 0;
@@ -656,7 +657,7 @@ footer .elements .block2 {
   background-color: #f67d7e;
   border-radius: 5px;
 }
-.addform select[multiple]:focus option:checked {
+.addform select[multiple] option:checked {
   background: #4cbfcf linear-gradient(0deg, #4cbfcf 0%, #4cbfcf 100%);
 }
 .addform .trackrow .addfields {
