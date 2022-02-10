@@ -1,39 +1,46 @@
 <section class="detail">
-    <section class="left">
-        <div class="imgholder">
-            <img src="./images/@alb_img@" alt="albumimage" />
-            <img
-                    class="mirrored"
-                    src="images/@alb_img@"
-                    alt=""
-            />
-            <div class="recordshadow"></div>
-        </div>
-        <div class="spotifyCode"><img src="https://scannables.scdn.co/uri/plain/png/014048/white/360/spotify:album:@alb_url@"></div>
-    </section>
-    <section class="right">
-        <div class="artist">@art_name@</div>
-        <div class="album">@alb_name@</div>
-        <div class="release">@alb_releasedate@</div>
-        <div class="genre">@gr_name@</div>
+  <section class="left">
+    <div class="imgholder">
+      <img src="./images/@alb_img@" alt="albumimage" />
+      <img class="mirrored" src="images/@alb_img@" alt="" />
+      <div class="recordshadow"></div>
+    </div>
+    <div class="spotifyCode">
+      <img
+        src="https://scannables.scdn.co/uri/plain/png/014048/white/360/spotify:album:@alb_url@"
+      />
+    </div>
+  </section>
+  <section class="right">
+    <div class="artist">@art_name@</div>
+    <div class="album">@alb_name@</div>
+    <div class="release">@alb_releasedate@</div>
+    <div class="genre">@gr_name@</div>
 
-        <div class="songlist">
-            <h2>Tracks</h2>
-            @songlisttable@
-        </div>
-        <iframe
-                src="https://open.spotify.com/embed/album/@alb_url@?utm_source=generator"
-                width="100%"
-                height="80"
-                frameborder="0"
-                allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        ></iframe>
-        <form action="./lib/delete.php" method="post" onsubmit="return confirm('Are you sure you want to delete this record?');">
-            <input type="hidden" name="csrf" value="@csrf_token@">
-            <input type="hidden" name="alb_id" value="@alb_id@">
-            <button class="delete_button" type="submit">Delete</button>
-        </form>
+    <div class="songlist">
+      <h2>Tracks</h2>
+      @songlisttable@
+    </div>
+    <iframe
+      src="https://open.spotify.com/embed/album/@alb_url@?utm_source=generator"
+      width="100%"
+      height="80"
+      frameborder="0"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    ></iframe>
 
-    </section>
+    <form
+      action="./lib/delete.php"
+      method="post"
+      onsubmit="return confirm('Are you sure you want to delete this record?');"
+    >
+      <input type="hidden" name="csrf" value="@csrf_token@" />
+      <input type="hidden" name="alb_id" value="@alb_id@" />
+      <button class="delete_button" type="submit">Delete</button>
+    </form>
+    <a href="./update.php?alb_id=@alb_id@">
+      <button class="edit_button">Edit</button>
+    </a>
+  </section>
 </section>

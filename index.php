@@ -37,7 +37,7 @@ PrintHead();
                 $data = getData($sql);
 
                 if (!$data){
-                    echo "<p>Er zijn geen resultaten gevonden. Gelieve een andere zoekterm te proberen</p>";
+                    echo "<p>Er zijn geen resultaten gevonden. Gelieve een andere zoekterm te proberen.</p>";
                 }
 
                 //get template

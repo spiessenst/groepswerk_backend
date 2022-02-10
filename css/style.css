@@ -360,6 +360,7 @@ footer .elements .block2 {
   margin-top: 32px;
   margin-bottom: 38px;
   max-width: 1940px;
+  justify-content: center;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -500,7 +501,7 @@ footer .elements .block2 {
   flex: 1 1 300px;
   padding-bottom: 50px;
 }
-.detail .right .delete_button {
+.detail .right button {
   border: 0;
   width: 20%;
   background-color: red;
@@ -512,6 +513,11 @@ footer .elements .block2 {
   cursor: pointer;
   margin-top: 20px;
   float: right;
+}
+.detail .right a button {
+  background-color: #c7f694;
+  margin-right: 20px;
+  color: #f67d7e;
 }
 .detail .right .artist {
   font-size: 35px;

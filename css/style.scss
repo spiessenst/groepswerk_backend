@@ -226,6 +226,7 @@ footer {
   margin-top: 32px;
   margin-bottom: 38px;
   max-width: 1940px;
+  justify-content: center;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -396,7 +397,7 @@ footer {
     flex: 1 1 300px;
     padding-bottom: 50px;
 
-    .delete_button {
+    button {
       border: 0;
       width: 20%;
       background-color: red;
@@ -408,6 +409,12 @@ footer {
       cursor: pointer;
       margin-top: 20px;
       float: right;
+    }
+
+    a button {
+      background-color: $light-green;
+      margin-right: 20px;
+      color: $pink;
     }
 
     .artist {
