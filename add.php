@@ -22,6 +22,8 @@ PrintHead();
             $template =  file_get_contents("templates/add.html");
 
             $output =  MergeViewWithExtraElements( $template , $extra_elements);
+
+
             print $output;
             ?>
 

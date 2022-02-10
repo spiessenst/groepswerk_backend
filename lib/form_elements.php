@@ -21,7 +21,7 @@ function GenreList($data){
 
 function GenreSelect($data){
 
-        $list = '<select name="genre[]" multiple size="5" class="form__genre">';
+        $list = '<select name="genre[]" multiple size="5" class="form__genre" required>';
 
     foreach ( $data as $row ){
 
