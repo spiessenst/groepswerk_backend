@@ -12,24 +12,24 @@ PrintHead();
 
         <section class="middle">
             <?php
-            $sql = "select * from album 
-                    inner join track t on album.alb_id = t.tr_alb_id
-                    inner join artist a on album.alb_art_id = a.art_id
-                    inner join album_genre ag on album.alb_id = ag.alb_id
-                    inner join genre g on ag.gr_id = g.gr_id
-                    where album.alb_id = " . $_GET['alb_id'];
+            $template = file_get_contents("templates/update.html"); //load template
 
-            $data = getData($sql);
+            $data = getData("select * from album where album.alb_id = " . $_GET['alb_id']);  //get information from the album table
+            $output = MergeViewWithData($template, $data);  //merge this information with the template
 
-            $template = file_get_contents("templates/update.html");
-            $output = MergeViewWithData($template, $data);
-            print $output;
+            $album = getData("select * from artist where art_id =" . $data[0]['alb_art_id']);   //get the artist information
+            $output = MergeViewWithData($output, $album); // merge this with the template
 
-//            $extra_elements['select_genre'] = GenreSelect($data);
-//            $extra_elements['csrf_token'] = GenerateCSRF();
-//
-//            $output_extraelements = MergeViewWithExtraElements($template, $extra_elements);
-//            print $output_extraelements;
+            $data = $data = getData("select * from genre"); // get all the genres
+            $extra_elements['select_genre'] = GenreSelect($data); //make genreselector
+            $extra_elements['csrf_token'] = GenerateCSRF(); //generate CSRF
+
+            $output = MergeViewWithExtraElements($output, $extra_elements); // merge this with the template
+
+            print $output; // print the output
+
+
+            //            print $output_extraelements;
             ?>
 
 

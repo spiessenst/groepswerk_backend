@@ -1,9 +1,11 @@
 <section class="addform">
 
-    <form enctype="multipart/form-data" action="./lib/save.php" method="POST" class="form">
+    <form enctype="multipart/form-data" action="./lib/update.php" method="POST" class="form">
 
 
         <input type="hidden" name="csrf" value="@csrf_token@">
+        <input type="hidden" name="art_id" value="@art_id@">
+        <input type="hidden" name="pkey" value="@alb_id@">
         <input
                 type="text"
                 name="art_name"
@@ -34,7 +36,7 @@
                 onfocus="(type = 'date')"
         />
 
-<!--        @select_genre@-->
+        @select_genre@
 
 
 <!--        <div class="tracks" id="tracks">-->
@@ -63,18 +65,18 @@
 <!--                />-->
 <!--                <button type="button"  id="addfields"class="addfields" onclick="addtrack(this)"></button>-->
 <!--                <button type="button"  id="deletefields"class="deletefields" onclick="deletetrack(this)"></button>-->
-<!--            </div>-->
-<!--        </div>-->
+            </div>
+        </div>
 
-        <input
-                type="file"
-                name="alb_img"
-                id="alb_img"
-                class="form__file"
-                placeholder="Album"
-                spellcheck="false"
-                value="@alb_img@"
-        />
+<!--        <input-->
+<!--                type="file"-->
+<!--                name="alb_img"-->
+<!--                id="alb_img"-->
+<!--                class="form__file"-->
+<!--                placeholder="Album"-->
+<!--                spellcheck="false"-->
+<!--                value="@alb_img@"-->
+<!--        />-->
 
         <input
                 type="text"
@@ -86,7 +88,7 @@
                 spellcheck="false"
         />
         <div class="formbuttons">
-<button class="form__add"> <!--type="submit" -->Edit</button>
+<button class="form__add" type="submit"> Edit</button>
 
         </div>
     </form>
