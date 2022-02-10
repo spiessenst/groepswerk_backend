@@ -1,6 +1,8 @@
 <?php
 require_once "autoload.php";
 
+var_dump($_POST);
+
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (CheckCSRF()) {
 
@@ -33,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 //      }
 
 //      $genres = $_POST['genre'];
-//
+////
 //      foreach ($genres as $genre){
 ////          ExecuteSQL("INSERT INTO album_genre ( alb_id , gr_id) VALUES ('".$new_album_id."' , '".$genre."')");
 ////      }
@@ -49,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 //        }
 
 
-//        header("Location: ../" . 'index.php');
+        header("Location: ../" . 'intro.php');
     }
 
 
@@ -75,7 +77,7 @@ function BuildSQL($update, $table, $pkey)
 
     foreach ($_POST as $field => $value) {
         //skip non-data fields
-        if (in_array($field, ['table', 'pkey', 'afterinsert', 'afterupdate', 'csrf', 'art_id', 'alb_id', 'art_name'])) continue;
+        if (in_array($field, ['table', 'pkey', 'afterinsert', 'afterupdate', 'csrf', 'art_id', 'alb_id', 'art_name', 'genre'])) continue;
 
         $where = "WHERE alb_id = '" . $_POST['pkey'] . "'";
         //handle primary key field
