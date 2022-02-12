@@ -1,6 +1,8 @@
 <?php
 require_once "autoload.php";
 
+var_dump($_POST);
+
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (CheckCSRF()) {
 
@@ -11,23 +13,24 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $sql = "UPDATE artist set art_name = '" . $_POST['art_name'] . "' where art_id = '" . $_POST['art_id'] . "'";
         print $sql;
         print "\n";
-        ExecuteSQL($sql);
+//        ExecuteSQL($sql);
 
         //update the album table
         $sql = BuildSQL(true, "album", $_POST['pkey']);
         print $sql;
-        ExecuteSQL($sql);
+//        ExecuteSQL($sql);
 
 
-//        $tracks = $_POST['tr_name'];
-//        $seconds = $_POST['tr_time'];
+        $tracks = $_POST['tr_name'];
+        $seconds = $_POST['tr_time'];
 
 
 //      for($i =0 ; $i < count($tracks) ; $i++){
-//
-//
+////
+////
 //          $second =  strtotime($seconds[$i]) - strtotime('TODAY');
-//
+//          UPDATE
+////
 //
 //          ExecuteSQL ( "INSERT INTO track (tr_name , tr_time , tr_alb_id ) VALUES ('". $tracks[$i]. "' , '".$second."' , '".$new_album_id."')");
 //      }
@@ -36,14 +39,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $genres = $_POST['genre'];  //get the new genres
         // delete old album-genre connections in album_genre
         $sql = "DELETE FROM album_genre where alb_id = '" . $_POST['pkey'] . "'";
-        ExecuteSQL($sql);
+//        ExecuteSQL($sql);
 
         foreach ($genres as $genre) {
             if ($genre === "") {
                 continue;
             }
             $sql = "INSERT INTO album_genre (alb_id, gr_id) VALUES ('" . $_POST['pkey'] . "','" . $genre . "')";
-            ExecuteSQL($sql);
+//            ExecuteSQL($sql);
         }
 
 //        $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/images/';
@@ -57,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 //        }
 
 
-        header("Location: ../" . 'intro.php');
+//        header("Location: ../" . 'intro.php');
 //    }
 
 
@@ -84,7 +87,7 @@ function BuildSQL($update, $table, $pkey)
 
     foreach ($_POST as $field => $value) {
         //skip non-data fields
-        if (in_array($field, ['table', 'pkey', 'afterinsert', 'afterupdate', 'csrf', 'art_id', 'alb_id', 'art_name', 'genre'])) continue;
+        if (in_array($field, ['table', 'tr_name', 'tr_time', 'pkey', 'afterinsert', 'afterupdate', 'csrf', 'art_id', 'alb_id', 'art_name', 'genre'])) continue;
 
         $where = "WHERE alb_id = '" . $_POST['pkey'] . "'";
         //handle primary key field
