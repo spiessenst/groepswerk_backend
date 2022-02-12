@@ -20,8 +20,13 @@ PrintHead();
             $album = getData("select * from artist where art_id =" . $data[0]['alb_art_id']);   //get the artist information
             $output = MergeViewWithData($output, $album); // merge this with the template
 
-            $data = $data = getData("select * from genre"); // get all the genres
-            $extra_elements['select_genre'] = GenreSelect($data); //make genreselector
+
+            //get the genre id's for this album to us in the GenreSelect function
+            $sql = "select gr_id from album_genre where alb_id =" . $_GET['alb_id'];
+            $genres_album = getData($sql);
+
+            $data = getData("select * from genre"); // get all the genres
+            $extra_elements['select_genre'] = GenreSelectUpdate($data, $genres_album); //make genreselector
             $extra_elements['csrf_token'] = GenerateCSRF(); //generate CSRF
 
             $output = MergeViewWithExtraElements($output, $extra_elements); // merge this with the template
