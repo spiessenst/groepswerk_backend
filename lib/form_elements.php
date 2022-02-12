@@ -19,7 +19,7 @@ function GenreList($data)
 
 }
 
-function GenreSelect($data, $genres_album = [])
+function GenreSelect($data)
 {
 
     $list = '<select name="genre[]" multiple size="5" class="form__genre">';
@@ -35,20 +35,23 @@ function GenreSelect($data, $genres_album = [])
 
 function GenreSelectUpdate($data, $genres_album = [])
 {
+    if (!$genres_album) {
+        return GenreSelect($data);
+    } else {
+        $list = '<select name="genre[]" multiple size="5" class="form__genre">';
 
-    $list = '<select name="genre[]" multiple size="5" class="form__genre">';
-
-    foreach ($genres_album as $genre) {
-        foreach ($data as $row) {
-            if ($row['gr_id'] === $genre['gr_id']) {
-                $list .= '<option value selected ="' . $row["gr_id"] . '">' . $row["gr_name"] . '</option>';
-            } else {
-                $list .= '<option value="' . $row["gr_id"] . '">' . $row["gr_name"] . '</option>';
+        foreach ($genres_album as $genre) {
+            foreach ($data as $row) {
+                if ($row['gr_id'] === $genre['gr_id']) {
+                    $list .= '<option value="' . $row["gr_id"] . '" selected>' . $row["gr_name"] . '</option>';
+                } else {
+                    $list .= '<option value="' . $row["gr_id"] . '">' . $row["gr_name"] . '</option>';
+                }
             }
-        }
-        $list .= '</select>';
+            $list .= '</select>';
 
-        return $list;
+            return $list;
+        }
     }
 }
 

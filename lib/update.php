@@ -1,8 +1,6 @@
 <?php
 require_once "autoload.php";
 
-var_dump($_POST);
-
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (CheckCSRF()) {
 
@@ -12,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         //update the artist table
         $sql = "UPDATE artist set art_name = '" . $_POST['art_name'] . "' where art_id = '" . $_POST['art_id'] . "'";
         print $sql;
-        print "/n";
+        print "\n";
         ExecuteSQL($sql);
 
         //update the album table
@@ -34,11 +32,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 //          ExecuteSQL ( "INSERT INTO track (tr_name , tr_time , tr_alb_id ) VALUES ('". $tracks[$i]. "' , '".$second."' , '".$new_album_id."')");
 //      }
 
-//      $genres = $_POST['genre'];
-////
-//      foreach ($genres as $genre){
-////          ExecuteSQL("INSERT INTO album_genre ( alb_id , gr_id) VALUES ('".$new_album_id."' , '".$genre."')");
-////      }
+        //update genres
+        $genres = $_POST['genre'];  //get the new genres
+        // delete old album-genre connections in album_genre
+        $sql = "DELETE FROM album_genre where alb_id = '" . $_POST['pkey'] . "'";
+        ExecuteSQL($sql);
+
+        foreach ($genres as $genre) {
+            if ($genre === "") {
+                continue;
+            }
+            $sql = "INSERT INTO album_genre (alb_id, gr_id) VALUES ('" . $_POST['pkey'] . "','" . $genre . "')";
+            ExecuteSQL($sql);
+        }
 
 //        $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/images/';
 //        $uploadfile = $uploaddir . basename($_FILES['alb_img']['name']);
@@ -52,9 +58,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
         header("Location: ../" . 'intro.php');
+//    }
+
+
     }
-
-
 }
 
 function CheckCSRF()
