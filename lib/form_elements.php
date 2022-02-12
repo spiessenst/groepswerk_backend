@@ -55,6 +55,10 @@ function GenreSelectUpdate($data, $genres_album = [])
     }
 }
 
+function makeTracks($data){
+    $template = file_get_contents("templates/track.html");
+    return MergeViewWithData($template, $data);
+}
 
 
 

@@ -25,9 +25,17 @@ PrintHead();
             $sql = "select gr_id from album_genre where alb_id =" . $_GET['alb_id'];
             $genres_album = getData($sql);
 
-            $data = getData("select * from genre"); // get all the genres
+            //    get the tracks for this album
+            $sql = "select * from track inner join album a on track.tr_alb_id = a.alb_id where alb_id = " . $_GET['alb_id'];
+            $tracks = getData($sql);
+            $extra_elements['tracks'] = makeTracks($tracks);
+
+            // get all the genres
+            $data = getData("select * from genre");
             $extra_elements['select_genre'] = GenreSelectUpdate($data, $genres_album); //make genreselector
-            $extra_elements['csrf_token'] = GenerateCSRF(); //generate CSRF
+
+            //generate CSRF
+            $extra_elements['csrf_token'] = GenerateCSRF();
 
             $output = MergeViewWithExtraElements($output, $extra_elements); // merge this with the template
 
