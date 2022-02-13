@@ -1,7 +1,21 @@
 <?php
-function PrintHead()
+function PrintHead($customcss = "" , $customscript = "")
 {
+
     $head = file_get_contents("templates/head.html");
+    if ($customcss == ""){
+        $head = str_replace("@customcss@", "" , $head );
+    }else{
+        $head = str_replace("@customcss@", "<link rel='stylesheet' href='./css/". $customcss ."' />" , $head );
+    }
+
+    if ($customscript == ""){
+        $head = str_replace("@customscript@", "" , $head );
+    }else{
+        $head = str_replace("@customscript@",  "<script type='text/javascript' src='./js/".$customscript."'></script>" , $head );
+    }
+
+
     print $head;
 }
 
@@ -74,7 +88,7 @@ function MergeViewWithExtraElementsGenre( $template, $elements )
 
 function MergeSongList( $template , $data){
 
-   // print("<pre>".print_r($data,true)."</pre>");
+
 
 $counter = 1;
     $songlist = "<table>";
