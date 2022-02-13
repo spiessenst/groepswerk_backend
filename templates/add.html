@@ -11,6 +11,8 @@
                 class="form__artist"
                 placeholder="Artist"
                 spellcheck="false"
+                maxlength="255"
+                required
         />
         <input
                 type="text"
@@ -19,6 +21,8 @@
                 class="form__album"
                 placeholder="Album"
                 spellcheck="false"
+                maxlength="255"
+                required
         />
         <input
 
@@ -28,7 +32,9 @@
                 class="form__releasedate"
                 placeholder="Releasedate"
                 spellcheck="false"
+                maxlength="255"
                 onfocus="(type = 'date')"
+                required
         />
 
         @select_genre@
@@ -43,6 +49,8 @@
                         class="form__track"
                         placeholder="Track"
                         spellcheck="false"
+                        maxlength="255"
+                        required
                 />
 
                 <input
@@ -54,6 +62,7 @@
                         placeholder="TrackLength"
                         spellcheck="false"
                         onfocus="(type = 'time', value='00:00:00')"
+                        required
 
                 />
                 <button type="button"  id="addfields" class="addfields" onclick="addtrack(this)"></button>
@@ -68,6 +77,8 @@
                 class="form__file"
                 placeholder="Album"
                 spellcheck="false"
+                maxlength="255"
+                required
         />
 
         <input
@@ -77,10 +88,12 @@
                 class="form__url"
                 placeholder="Spotifycode"
                 spellcheck="false"
+                maxlength="255"
+                required
         />
         <div class="formbuttons">
             <button class="form__reset" type="reset">Reset</button>
-        <button class="form__add" type="submit">Add</button>
+        <button class="form__add" type="submit" >Add</button>
 
         </div>
     </form>

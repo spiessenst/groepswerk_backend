@@ -3,11 +3,13 @@ require_once "autoload.php";
 
 if ( $_SERVER['REQUEST_METHOD'] == "POST" ) {
     if ( CheckCSRF() ) {
-        // print("<pre>".print_r($_POST,true)."</pre>");
+
         $_POST = StripSpaces($_POST);
         $_POST = ConvertSpecialChars($_POST);
 
+
         $new_artist_id = ExecuteSQL( "INSERT INTO artist (art_name) VALUES ('". $_POST['art_name']."') " );
+
 
         $new_album_id = ExecuteSQL ("INSERT INTO album (alb_name , alb_releasedate , alb_url , alb_img , alb_art_id) VALUES ('". $_POST['alb_name']."' , '".$_POST['alb_releasedate']."' , '".$_POST['alb_url']."' ,'".$_FILES['alb_img']['name']."', '".$new_artist_id."') ");
 

@@ -3,7 +3,8 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 ini_set('display_errors', 1);
 require_once "lib/autoload.php";
 
-PrintHead();
+PrintHead("" , "addfield.js");
+
 ?>
 
     <main>
@@ -22,6 +23,8 @@ PrintHead();
             $template =  file_get_contents("templates/add.html");
 
             $output =  MergeViewWithExtraElements( $template , $extra_elements);
+
+
             print $output;
             ?>
 
