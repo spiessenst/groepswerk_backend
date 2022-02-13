@@ -17,7 +17,8 @@ function PrintTop()
     print $top;
 }
 
-function PrintMiddle(){
+function PrintMiddle()
+{
     $middle = file_get_contents("templates/albumgrid.html");
     print $middle;
 }
@@ -28,19 +29,18 @@ function PrintIntro()
     print $intro;
 }
 
-function MergeViewWithData( $template, $data )
+function MergeViewWithData($template, $data)
 {
     $returnvalue = "";
 
-    foreach ( $data as $row )
-    {
+    foreach ($data as $row) {
         $output = $template;
 
-        foreach( array_keys($row) as $field )  //eerst "img_id", dan "img_title", ...
+        foreach (array_keys($row) as $field)  //eerst "img_id", dan "img_title", ...
 
         {
 
-            $output = str_replace( "@$field@", $row["$field"], $output );
+            $output = str_replace("@$field@", $row["$field"], $output);
         }
 
         $returnvalue .= $output;
@@ -49,67 +49,65 @@ function MergeViewWithData( $template, $data )
     return $returnvalue;
 }
 
-function MergeViewWithExtraElements( $template, $elements )
+function MergeViewWithExtraElements($template, $elements)
 {
 
-    foreach ( $elements as $key => $element )
-    {
+    foreach ($elements as $key => $element) {
 
-        $template = str_replace( "@$key@", $element, $template );
+        $template = str_replace("@$key@", $element, $template);
     }
     return $template;
 }
 
 
-function MergeViewWithExtraElementsGenre( $template, $elements )
+function MergeViewWithExtraElementsGenre($template, $elements)
 {
     $genre = "";
-    foreach ($elements as  $element ){
+    foreach ($elements as $element) {
         $genre .= $element['gr_name'] . ", ";
     }
     $genre = substr($genre, 0, -2);
-    $template = str_replace( "@gr_name@", $genre, $template );
+    $template = str_replace("@gr_name@", $genre, $template);
     return $template;
 }
 
-function MergeSongList( $template , $data){
+function MergeSongList($template, $data)
+{
 
-   // print("<pre>".print_r($data,true)."</pre>");
+    // print("<pre>".print_r($data,true)."</pre>");
 
-$counter = 1;
+    $counter = 1;
     $songlist = "<table>";
 
-    foreach ($data as $row){
+    foreach ($data as $row) {
         $songlist .= "<tr>";
-        $songlist .=  "<td>" . $counter . "</td>";
-        $songlist .=  "<td>" . $row['tr_name']. "</td>";
-        $songlist .=  "<td>" . gmdate("H:i:s", $row['tr_time']). "</td>";
-        $songlist .=  "</tr>";
+        $songlist .= "<td>" . $counter . "</td>";
+        $songlist .= "<td>" . $row['tr_name'] . "</td>";
+        $songlist .= "<td>" . gmdate("H:i:s", $row['tr_time']) . "</td>";
+        $songlist .= "</tr>";
         $counter++;
 
     }
-    $songlist .=  "</table>";
-    $template = str_replace( "@songlisttable@", $songlist, $template );
-return $template;
+    $songlist .= "</table>";
+    $template = str_replace("@songlisttable@", $songlist, $template);
+    return $template;
 }
 
 
-function MergeViewWithErrors( $template, $errors )
+function MergeViewWithErrors($template, $errors)
 {
-    foreach ( $errors as $key => $error )
-    {
-        $template = str_replace( "@$key@", "<p style='color:red'>$error</p>", $template );
+    foreach ($errors as $key => $error) {
+        $template = str_replace("@$key@", "<p style='color:red'>$error</p>", $template);
     }
     return $template;
 }
 
-function RemoveEmptyErrorTags( $template, $data )
+function RemoveEmptyErrorTags($template, $data)
 {
-    foreach ( $data as $row )
-    {
-        foreach( array_keys($row) as $field )  //eerst "img_id", dan "img_title", ...
+    foreach ($data as $row) {
+        foreach (array_keys($row) as $field)  //eerst "img_id", dan "img_title", ...
         {
-            $template = str_replace( "@$field" . "_error@", "", $template );
+            $template = str_replace("@$field" . "_error@", "", $template);
         }
     }
 

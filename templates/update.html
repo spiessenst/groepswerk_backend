@@ -36,47 +36,12 @@
                 onfocus="(type = 'date')"
         />
 
-<!--        @select_genre@-->
+        @select_genre@
 
+        <div class='tracks' id='tracks'>"
+            @tracks@
+        </div>
 
-<!--        <div class="tracks" id="tracks">-->
-<!--            <div class="trackrow" id="trackrow">-->
-<!--                <input-->
-<!--                        type="text"-->
-<!--                        name="tr_name[]"-->
-<!--                        id="track_0"-->
-<!--                        class="form__track"-->
-<!--                        placeholder="Track"-->
-<!--                        spellcheck="false"-->
-<!--                        value="@tr_name@"-->
-<!--                />-->
-
-<!--                <input-->
-<!--                        type="text"-->
-<!--                        step="2"-->
-<!--                        name="tr_time[]"-->
-<!--                        id="seconds_0"-->
-<!--                        class="form__seconds"-->
-<!--                        placeholder="TrackLength"-->
-<!--                        value="@tr_time@"-->
-<!--                        spellcheck="false"-->
-<!--                        onfocus="(placeholder = '00:00:00');"-->
-
-<!--                />-->
-<!--                <button type="button"  id="addfields"class="addfields" onclick="addtrack(this)"></button>-->
-<!--                <button type="button"  id="deletefields"class="deletefields" onclick="deletetrack(this)"></button>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--        <input-->
-<!--                type="file"-->
-<!--                name="alb_img"-->
-<!--                id="alb_img"-->
-<!--                class="form__file"-->
-<!--                placeholder="Album"-->
-<!--                spellcheck="false"-->
-<!--                value="@alb_img@"-->
-<!--        />-->
 
         <input
                 type="text"
@@ -88,7 +53,7 @@
                 spellcheck="false"
         />
         <div class="formbuttons">
-<button class="form__add" type="submit"> Edit</button>
+            <button class="form__add" type="submit">Save</button>
 
         </div>
     </form>
