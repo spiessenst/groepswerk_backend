@@ -88,7 +88,6 @@ function MergeViewWithExtraElementsGenre($template, $elements)
 function MergeSongList($template, $data)
 {
 
-
     $counter = 1;
     $songlist = "<table>";
 
