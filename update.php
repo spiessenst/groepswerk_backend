@@ -41,8 +41,6 @@ PrintHead();
 
             print $output; // print the output
 
-
-            //            print $output_extraelements;
             ?>
 
 

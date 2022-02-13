@@ -20,7 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         print $sql;
         ExecuteSQL($sql);
 
-
         //update the tracks table
         $tracks = $_POST['tr_name'];
         $seconds = $_POST['tr_time'];
@@ -46,22 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $sql = "INSERT INTO album_genre (alb_id, gr_id) VALUES ('" . $_POST['pkey'] . "','" . $genre . "')";
             ExecuteSQL($sql);
         }
-
-//        $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/images/';
-//        $uploadfile = $uploaddir . basename($_FILES['alb_img']['name']);
-//
-//
-//        if (move_uploaded_file($_FILES['alb_img']['tmp_name'], $uploadfile)) {
-//            echo "File is valid, and was successfully uploaded.\n";
-//        } else {
-//            echo "Possible file upload attack!\n";
-//        }
-
-
         header("Location: ../" . 'intro.php');
-//    }
-
-
     }
 }
 
