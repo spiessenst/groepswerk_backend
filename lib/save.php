@@ -36,7 +36,7 @@ if ( $_SERVER['REQUEST_METHOD'] == "POST" ) {
 
         }
 
-        $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/images/';
+        $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/fs_thomass/images/';
         $uploadfile = $uploaddir . basename($_FILES['alb_img']['name']);
 
 
