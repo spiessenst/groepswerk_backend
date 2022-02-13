@@ -555,6 +555,9 @@ footer .elements .block2 {
   padding-bottom: 5px;
   padding-right: 10px;
 }
+.detail .right .songlist table td:last-of-type {
+  text-align: right;
+}
 
 .addform {
   margin: 0 auto;
