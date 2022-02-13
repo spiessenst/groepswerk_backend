@@ -1,8 +1,6 @@
 <?php
 require_once "autoload.php";
 
-var_dump($_POST);
-
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (CheckCSRF()) {
 
@@ -25,9 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $seconds = $_POST['tr_time'];
         $tracks_ids = $_POST['tr_id'];
 
+
         for ($i = 0; $i < count($tracks); $i++) {
-            $second = strtotime($seconds[$i]) - strtotime('TODAY');
-            $sql = "UPDATE track set tr_name ='" . $tracks[$i] . "', tr_time = '" . $seconds[$i] . "' where tr_id = " . $tracks_ids[$i];
+           $second = strtotime($seconds[$i]) - strtotime('TODAY');
+
+            $sql = "UPDATE track set tr_name ='" . $tracks[$i] . "', tr_time = '" . $second . "' where tr_id = " . $tracks_ids[$i];
             ExecuteSQL($sql);
         }
 
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $sql = "INSERT INTO album_genre (alb_id, gr_id) VALUES ('" . $_POST['pkey'] . "','" . $genre . "')";
             ExecuteSQL($sql);
         }
-        header("Location: ../" . 'intro.php');
+        header("Location: ../" . 'detail.php?alb_id='.$_POST['pkey']);
     }
 }
 

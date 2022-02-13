@@ -22,8 +22,6 @@ function GenreList($data)
 function GenreSelect($data)
 {
 
-
-
     $list = '<select name="genre[]" multiple size="5" class="form__genre" required>';
 
 
@@ -43,25 +41,44 @@ function GenreSelectUpdate($data, $genres_album = [])
     } else {
         $list = '<select name="genre[]" multiple size="5" class="form__genre">';
 
-        foreach ($genres_album as $genre) {
-            foreach ($data as $row) {
-                if ($row['gr_id'] === $genre['gr_id']) {
-                    $list .= '<option value="' . $row["gr_id"] . '" selected>' . $row["gr_name"] . '</option>';
-                } else {
+
+        foreach ($data as $row)     {
+            $isSelected = false;
+            foreach ($genres_album as $genre) {
+                if ($row["gr_id"] === $genre["gr_id"] ) $isSelected = true;
+        }
+                if ($isSelected === false){
                     $list .= '<option value="' . $row["gr_id"] . '">' . $row["gr_name"] . '</option>';
+                }else{
+                    $list .= '<option value="' . $row["gr_id"] . '" selected>' . $row["gr_name"] . '</option>';
                 }
-            }
+        }
+
+
+
+
             $list .= '</select>';
 
             return $list;
         }
-    }
+
 }
 
 function makeTracks($data)
 {
+    $data_new = [];
+    foreach ($data as $row){
+
+       $time = gmdate("H:i:s", $row['tr_time']);
+       $newtime['tr_time'] = $time;
+
+       $new_datarow = array_replace($row,$newtime );
+       array_push($data_new , $new_datarow );
+
+    }
+
     $template = file_get_contents("templates/track.html");
-    return MergeViewWithData($template, $data);
+    return MergeViewWithData($template, $data_new);
 }
 
 
