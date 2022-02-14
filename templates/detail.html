@@ -6,6 +6,7 @@
       <div class="recordshadow"></div>
     </div>
     <div class="spotifyCode">
+      <!--- Spotify scannable --->
       <img
         src="https://scannables.scdn.co/uri/plain/png/014048/white/360/spotify:album:@alb_url@"
       />
@@ -19,8 +20,10 @@
 
     <div class="songlist">
       <h2>Tracks</h2>
+      <!--- Songlistmerge --->
       @songlisttable@
     </div>
+    <!--- Spotify Player --->
     <iframe
       src="https://open.spotify.com/embed/album/@alb_url@?utm_source=generator"
       width="100%"
@@ -30,16 +33,18 @@
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
     ></iframe>
 
-
+    <!--- Delete form --->
     <form
       action="./lib/delete.php"
       method="post"
       onsubmit="return confirm('Are you sure you want to delete this record?');"
     >
+      <!--- Data for delete POST --->
       <input type="hidden" name="csrf" value="@csrf_token@" />
       <input type="hidden" name="alb_id" value="@alb_id@" />
       <button class="delete_button" type="submit">Delete</button>
     </form>
+    <!--- Link to Updatepage  --->
     <a href="./update.php?alb_id=@alb_id@">
       <button class="edit_button">Edit</button>
     </a>
