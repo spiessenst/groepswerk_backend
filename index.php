@@ -14,13 +14,14 @@ PrintHead();
             <div class="albumgrid">
                 <?php
 
+
                 // check if the searchbar has been used or the genres have been clicked
-                if ($_GET) {
+                if (isset($_GET) AND $_GET["search"] != "" OR $_GET["gr_id"] != "" ) {
                     if ($_GET["search"]) {   // if it was the search bar
                         $sql = "select * from album 
                             inner join artist a on album.alb_art_id = a.art_id 
                             where alb_name like '%" . $_GET["search"] . "%' or art_name like '%" . $_GET["search"] . "%'";
-                        $data = getData($sql);
+                        //$data = getData($sql);
                     }
                     if ($_GET["gr_id"]) {   //if it was a genre that has been clicked
                         $sql = "select * from genre 

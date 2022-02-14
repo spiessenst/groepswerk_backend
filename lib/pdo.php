@@ -49,8 +49,9 @@ function ExecuteSQL( $sql )
 
     //define and execute query
     $conn->query( $sql );
+    // get last insert id
     $last_ID = $conn->lastInsertId();
-
+    // return last insert id
     return $last_ID;
 }
 

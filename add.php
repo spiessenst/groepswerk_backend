@@ -15,15 +15,14 @@ PrintHead("" , "addfield.js");
             <?php
             $data = getData("select * from genre");
 
-
+            // call get select function
             $extra_elements['select_genre'] = GenreSelect($data);
             $extra_elements['csrf_token'] = GenerateCSRF();
 
 
             $template =  file_get_contents("templates/add.html");
-
+            // Merge with the multi select box and csrf.
             $output =  MergeViewWithExtraElements( $template , $extra_elements);
-
 
             print $output;
             ?>
